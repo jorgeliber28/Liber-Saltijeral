@@ -107,11 +107,11 @@ h1 .line{
   animation: drawLine 3.2s ease forwards 0.2s;
 }
 
-/* Portada blanca: cubrir pantalla completa debajo del hero */
+/* Fondo blanco continuo cubriendo todo detrás */
 .actions-bg{
-  background:#fff url('patron_blanco.jpg') center/cover no-repeat;
-  min-height:100vh;         /* Cubre al menos la pantalla completa */
-  padding:22px 0 40px;
+  background: url('patron_blanco.jpg') center/cover no-repeat local;
+  min-height:100vh;
+  padding:40px 0 60px;
 }
 
 /* Botones sobrios: blanco + borde guinda + texto guinda */
