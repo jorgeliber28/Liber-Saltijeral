@@ -34,8 +34,10 @@ body{
 .hero::before{
   content:"";
   position:absolute;inset:0;
-  background:rgba(157,33,72,0.78); /* overlay guinda suave */
+  background:rgba(157,33,72,0.85); /* overlay guinda suave */
 }
+
+
 .hero > .wrap,
 .hero-divider{
   position:relative; /* mantiene el contenido por encima del overlay */
@@ -119,7 +121,11 @@ h1 .line{
 @media (prefers-reduced-motion:reduce){
   .btn{transition:none}
 }
-
+.avatar{
+  border:3px solid #fff;
+  outline:2px solid var(--dorado);
+  outline-offset:-3px;
+}
 /* Desktop: avatar algo mayor */
 @media(min-width:760px){
   .avatar{width:140px;height:140px}
