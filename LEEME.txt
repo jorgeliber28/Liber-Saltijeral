@@ -1,0 +1,8 @@
+ARCHIVOS NECESARIOS (sube con estos nombres al mismo nivel que index.html):
+
+- logo.png               (logotipo institucional a color)
+- patron_blanco.jpg      (patrón blanco para la franja superior; 140 px alto visible)
+- foto.jpg               (fotografía, ideal > 800x800 px)
+- contact.vcf            (opcional, vCard para el botón "Agregar contacto")
+
+Abre index.html para ver la tarjeta.
