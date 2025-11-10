@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jorge Liber Saltijeral Giles — Tarjeta digital</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jorge Liber Saltijeral Giles</title>
+<link rel="stylesheet" href="styles.css" />
+
+<!-- Tipografías -->
+<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <!-- Cinta superior con patrón en blanco (140px de alto) -->
-  <div class="top-band">
-    <div class="wrap">
-      <img class="logo" src="logo.png" alt="Secretaría del Medio Ambiente">
-    </div>
+
+<header class="top-bar">
+  <img src="logo_sema_guinda.png" alt="Logotipo SEDEMA">
+</header>
+
+<section class="card">
+  <div class="text-block">
+    <h1>Jorge Liber<br>Saltijeral Giles</h1>
+    <p class="puesto">Asesor</p>
+    <p class="dependencia">Secretaría del Medio Ambiente<br>de la Ciudad de México</p>
   </div>
 
-  <!-- Tarjeta principal en guinda -->
-  <header class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-text">
-        <h1 class="name">Jorge Liber<br>Saltijeral Giles</h1>
-        <div class="title">Asesor</div>
-        <p class="dept">Secretaría del Medio Ambiente de la Ciudad de México</p>
-      </div>
+  <div class="photo-block">
+    <img src="foto.jpg" alt="Foto de Jorge Liber">
+  </div>
+</section>
 
-      <figure class="avatar-wrap" aria-label="Foto de perfil">
-        <img src="foto.jpg" class="avatar" alt="Foto de Jorge Liber Saltijeral Giles">
-      </figure>
-    </div>
-    <div class="hero-divider"></div>
-  </header>
+<hr class="divider">
 
-  <!-- Botonera -->
-  <main class="wrap actions">
-    <a class="btn" href="https://wa.me/525533312276" target="_blank" rel="noopener">WhatsApp</a>
-    <a class="btn" href="mailto:liber.sedema@gmail.com">Enviar correo</a>
-    <a class="btn" href="contact.vcf" download="Jorge_Liber_Saltijeral.vcf">Agregar contacto</a>
-    <a class="btn" href="https://www.linkedin.com/in/jorge-liber-saltijeral-giles-628a7740/" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="btn" href="https://sedema.cdmx.gob.mx/" target="_blank" rel="noopener">Página institucional</a>
-  </main>
+<section class="buttons-container">
+  <a href="https://wa.me/5215533312276" class="btn">WhatsApp</a>
+  <a href="mailto:liber.sedema@gmail.com" class="btn">Enviar correo</a>
+  <a href="contact.vcf" download class="btn">Agregar contacto</a>
+  <a href="https://www.linkedin.com/in/jorge-liber" class="btn">LinkedIn</a>
+  <a href="https://sedema.cdmx.gob.mx" class="btn">Página institucional</a>
+</section>
+
 </body>
 </html>
