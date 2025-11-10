@@ -25,7 +25,21 @@ body{
 .top-bar img{height:54px;width:auto}
 
 /* Hero guinda */
-.hero{background:var(--guinda);color:#fff}
+/* Hero con patrón rojo + overlay para legibilidad */
+.hero{
+  color:#fff;
+  position:relative;
+  background: url('patron_rojo.jpg') center/cover no-repeat;
+}
+.hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background:rgba(157,33,72,0.78); /* overlay guinda suave */
+}
+.hero > .wrap,
+.hero-divider{
+  position:relative; /* mantiene el contenido por encima del overlay */
+}
 .hero-divider{height:6px;background:var(--dorado)}
 .hero .wrap{padding:24px 16px 22px}
 
