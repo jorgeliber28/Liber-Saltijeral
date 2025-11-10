@@ -2,45 +2,40 @@
   --guinda:#9d2148;
   --dorado:#b28e5c;
   --blanco:#ffffff;
-  --gris-txt:#111;
+  --gris:#111;
 }
 
 *{box-sizing:border-box}
-html,body{height:100%}
 body{
   margin:0;
   font-family:'Roboto',sans-serif;
+  color:var(--gris);
   background:#fff;
 }
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
 
-/* Estructura general */
-.page{
-  display:flex;
-  flex-direction:column;
-  min-height:100vh;
-}
-
-/* Franja superior */
+/* Top bar patrón blanco */
 .top-bar{
   background:#fff url('patron_blanco.jpg') center/cover no-repeat;
   height:82px;
-  border-bottom:3px solid var(--dorado);
   display:flex;align-items:center;justify-content:center;
+  border-bottom:3px solid var(--dorado);
 }
 .top-bar img{height:54px;width:auto}
 
-/* Hero */
+/* Hero patrón rojo */
 .hero{
   position:relative;
   color:#fff;
   background:url('patron_rojo.jpg') center/cover no-repeat;
+  overflow:hidden;
 }
 .hero::before{
   content:"";
   position:absolute;inset:0;
-  background:rgba(157,33,72,0.83);
+  background:rgba(157,33,72,0.85);
 }
-.hero > .wrap{position:relative;padding:24px 16px 22px;}
+.hero .wrap{position:relative;padding:28px 16px 32px}
 
 .hero-grid{
   display:grid;
@@ -49,65 +44,48 @@ body{
   align-items:center;
 }
 
-h1{margin:0 0 8px;font-weight:700;font-family:'Cabin',sans-serif;}
-h1 .line{display:block;font-size:clamp(28px,6vw,50px);}
-.role{color:var(--dorado);font-weight:700;margin-bottom:6px;}
-.org{margin:0;opacity:.95;font-size:clamp(14px,2.7vw,18px);}
+h1{font-family:'Cabin',sans-serif;font-weight:700;margin:0 0 8px}
+h1 .line{display:block;font-size:clamp(28px,6vw,50px);white-space:nowrap}
+.role{color:var(--dorado);font-weight:700;margin-bottom:4px}
+.org{margin:0;opacity:.95;font-size:clamp(14px,2.7vw,18px)}
 
-/* Avatar */
 .avatar{
-  width:118px;height:118px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid #fff;
-  outline:2px solid var(--dorado);
-  outline-offset:-3px;
+  width:118px;height:118px;border-radius:50%;object-fit:cover;
+  border:3px solid #fff;outline:2px solid var(--dorado);outline-offset:-3px;
   box-shadow:0 3px 12px rgba(0,0,0,.25);
 }
 
 /* Curva orgánica */
-.hero-wave{
-  position:relative;
-  margin-top:-1px;
+.hero-wave svg{width:100%;display:block}
+.wave-stroke{
+  stroke-dasharray:1800;
+  stroke-dashoffset:1800;
+  animation:drawWave 4.5s ease-out forwards;
 }
-.hero-wave svg{display:block;width:100%;height:auto;}
 
-/* Sección acciones */
+@keyframes drawWave{
+  to{stroke-dashoffset:0}
+}
+
+/* Fondo blanco con patrón */
 .actions-bg{
-  flex:1 0 auto;
   background:#fff url('patron_blanco.jpg') center/cover no-repeat;
-  padding:40px 0 52px;
+  padding:32px 0 48px;
 }
 
-.actions{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  max-width:420px;
-  margin:0 auto;
-}
-
+/* Botones */
+.actions{display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto}
 .btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  text-decoration:none;
-  font-weight:700;
-  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  text-decoration:none;font-weight:700;border-radius:12px;
   padding:10px 14px;
-  border:2px solid var(--guinda);
-  border-bottom:3px solid var(--guinda);
-  background:#fff;
-  color:var(--guinda);
-  transition:background .2s, transform .05s;
+  border:2px solid var(--guinda);border-bottom:3px solid var(--guinda);
+  background:#fff;color:var(--guinda);
+  transition:.2s;
 }
 .btn:hover{background:#f7f2f5}
-.btn:active{transform:translateY(1px)}
-
 .icon svg{width:20px;height:20px;display:block}
 
-/* Avatar más grande en desktop */
 @media(min-width:760px){
   .avatar{width:140px;height:140px}
 }
