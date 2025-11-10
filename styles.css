@@ -87,7 +87,7 @@ h1 .line{
   height:7px;
   background:var(--dorado);
   transform-origin:left center;
-  animation: dividerGrow 1.5s cubic-bezier(.25,.1,.25,1.0) .2s both;
+  animation: dividerGrow 2.1s cubic-bezier(.25,.1,.25,1.0) .2s both;
 }
 /* Fondo de acciones con tu patrón blanco */
 .actions-bg{
