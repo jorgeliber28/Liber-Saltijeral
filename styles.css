@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #fffae9 url('patron_blanco.jpg') top center repeat-x;
+  background-size: 900px;
+}
+
+.hero {
+  background: #9d2148;
+  color: white;
+  padding: 25px 20px;
+  border-bottom: 6px solid #b28e5c;
+}
+
+.logo {
+  width: 160px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Cabin', sans-serif;
+  font-size: 2rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cargo {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.profile {
+  text-align: center;
+  margin-top: -50px;
+}
+
+.foto {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 6px solid white;
+  box-shadow: 0 0 18px rgba(0,0,0,0.25);
+  object-fit: cover;
+}
+
+.acciones {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.btn {
+  background: #9d2148;
+  color: white;
+  padding: 14px;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
