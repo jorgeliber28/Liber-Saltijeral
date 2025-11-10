@@ -1,6 +1,6 @@
 :root{
-  --guinda:#9d2148;    /* Pantone 7420 C */
-  --dorado:#b28e5c;    /* Pantone 465 C */
+  --guinda:#9d2148;
+  --dorado:#b28e5c;
   --blanco:#ffffff;
   --gris-txt:#111;
 }
@@ -10,36 +10,37 @@ html,body{height:100%}
 body{
   margin:0;
   font-family:'Roboto',sans-serif;
-  color:var(--gris-txt);
   background:#fff;
 }
-.wrap{max-width:720px;margin:0 auto;padding:0 16px}
 
-/* Franja con patrón (logo legible) */
+/* Estructura general */
+.page{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* Franja superior */
 .top-bar{
   background:#fff url('patron_blanco.jpg') center/cover no-repeat;
   height:82px;
-  display:flex;align-items:center;justify-content:center;
   border-bottom:3px solid var(--dorado);
-  animation: bandFade .6s ease both;
+  display:flex;align-items:center;justify-content:center;
 }
 .top-bar img{height:54px;width:auto}
 
-/* Hero con patrón rojo + overlay para legibilidad */
+/* Hero */
 .hero{
-  color:#fff;
   position:relative;
-  background: url('patron_rojo.jpg') center/cover no-repeat;
-  overflow:hidden;
+  color:#fff;
+  background:url('patron_rojo.jpg') center/cover no-repeat;
 }
 .hero::before{
   content:"";
   position:absolute;inset:0;
-  background:rgba(157,33,72,0.85); /* overlay guinda suave */
+  background:rgba(157,33,72,0.83);
 }
-.hero > .wrap,
-.hero-divider{ position:relative } /* contenido por encima del overlay */
-.hero .wrap{padding:24px 16px 22px; animation: heroIn .7s ease .05s both}
+.hero > .wrap{position:relative;padding:24px 16px 22px;}
 
 .hero-grid{
   display:grid;
@@ -47,29 +48,13 @@ body{
   gap:16px;
   align-items:center;
 }
-h1{
-  font-family:'Cabin',sans-serif;
-  font-weight:700;
-  margin:0 0 8px;
-  line-height:1.08;
-}
-h1 .line{
-  display:block;
-  white-space:nowrap;
-  font-size:clamp(28px,6vw,50px);
-}
-.role{
-  color:var(--dorado);
-  font-weight:700;
-  margin:2px 0 6px;
-  font-size:clamp(16px,3.5vw,20px);
-}
-.org{
-  margin:0;
-  opacity:.98;
-  font-size:clamp(14px,2.7vw,18px);
-}
 
+h1{margin:0 0 8px;font-weight:700;font-family:'Cabin',sans-serif;}
+h1 .line{display:block;font-size:clamp(28px,6vw,50px);}
+.role{color:var(--dorado);font-weight:700;margin-bottom:6px;}
+.org{margin:0;opacity:.95;font-size:clamp(14px,2.7vw,18px);}
+
+/* Avatar */
 .avatar{
   width:118px;height:118px;
   border-radius:50%;
@@ -78,24 +63,22 @@ h1 .line{
   outline:2px solid var(--dorado);
   outline-offset:-3px;
   box-shadow:0 3px 12px rgba(0,0,0,.25);
-  animation: avatarPop .5s ease .2s both;
 }
 
-/* Divisor dorado con animación */
-
-.hero-divider{
-  height:7px;
-  background:var(--dorado);
-  transform-origin:left center;
-  animation: dividerGrow 2.1s cubic-bezier(.25,.1,.25,1.0) .2s both;
+/* Curva orgánica */
+.hero-wave{
+  position:relative;
+  margin-top:-1px;
 }
-/* Fondo de acciones con tu patrón blanco */
+.hero-wave svg{display:block;width:100%;height:auto;}
+
+/* Sección acciones */
 .actions-bg{
+  flex:1 0 auto;
   background:#fff url('patron_blanco.jpg') center/cover no-repeat;
-  padding:20px 0 36px;
+  padding:40px 0 52px;
 }
 
-/* Botones sobrios: blanco + borde guinda + texto guinda */
 .actions{
   display:flex;
   flex-direction:column;
@@ -103,62 +86,28 @@ h1 .line{
   max-width:420px;
   margin:0 auto;
 }
+
 .btn{
-  display:flex;align-items:center;justify-content:center;gap:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
   text-decoration:none;
   font-weight:700;
   border-radius:12px;
-  padding:10px 14px;                     /* altura cómoda sin “llenar” pantalla */
+  padding:10px 14px;
   border:2px solid var(--guinda);
-  border-bottom:3px solid var(--guinda); /* relieve sutil */
+  border-bottom:3px solid var(--guinda);
   background:#fff;
   color:var(--guinda);
-  transition:background .2s, transform .05s, box-shadow .2s;
-  box-shadow:0 0 0 rgba(0,0,0,0);
-  animation: btnIn .5s ease both;
+  transition:background .2s, transform .05s;
 }
-.actions .btn:nth-child(1){animation-delay:.05s}
-.actions .btn:nth-child(2){animation-delay:.1s}
-.actions .btn:nth-child(3){animation-delay:.15s}
-.actions .btn:nth-child(4){animation-delay:.2s}
-
 .btn:hover{background:#f7f2f5}
 .btn:active{transform:translateY(1px)}
-.btn:focus-visible{
-  outline:3px solid rgba(157,33,72,.25);
-  outline-offset:2px;
-  box-shadow:0 0 0 3px rgba(157,33,72,.15);
-}
 
 .icon svg{width:20px;height:20px;display:block}
 
-/* Animaciones */
-@keyframes heroIn{
-  from{opacity:0; transform:translateY(8px)}
-  to{opacity:1; transform:none}
-}
-@keyframes avatarPop{
-  0%{opacity:0; transform:scale(.94)}
-  100%{opacity:1; transform:scale(1)}
-}
-@keyframes dividerGrow{
-  from{transform:scaleX(0)}
-  to{transform:scaleX(1)}
-}
-@keyframes btnIn{
-  from{opacity:0; transform:translateY(6px)}
-  to{opacity:1; transform:none}
-}
-@keyframes bandFade{
-  from{opacity:0} to{opacity:1}
-}
-
-/* Reduce motion para accesibilidad */
-@media (prefers-reduced-motion:reduce){
-  .btn, .hero .wrap, .avatar, .hero-divider, .top-bar{animation:none}
-}
-
-/* Desktop: avatar algo mayor */
+/* Avatar más grande en desktop */
 @media(min-width:760px){
   .avatar{width:140px;height:140px}
 }
