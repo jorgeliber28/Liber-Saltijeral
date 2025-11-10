@@ -1,91 +1,179 @@
 :root{
-  --guinda:#9d2148;
-  --dorado:#b28e5c;
+  --guinda:#9d2148;    /* Pantone 7420 C */
+  --dorado:#b28e5c;    /* Pantone 465 C */
   --blanco:#ffffff;
-  --gris:#111;
+  --gris-txt:#111;
 }
 
 *{box-sizing:border-box}
+html,body{height:100%}
 body{
   margin:0;
   font-family:'Roboto',sans-serif;
-  color:var(--gris);
+  color:var(--gris-txt);
   background:#fff;
 }
 .wrap{max-width:720px;margin:0 auto;padding:0 16px}
 
-/* Top bar patrón blanco */
+/* Franja con patrón (logo legible) */
 .top-bar{
   background:#fff url('patron_blanco.jpg') center/cover no-repeat;
-  height:82px;
+  height:82px;                          /* puedes subir/bajar este valor */
   display:flex;align-items:center;justify-content:center;
   border-bottom:3px solid var(--dorado);
+  animation: bandFade .6s ease both;
 }
 .top-bar img{height:54px;width:auto}
 
-/* Hero patrón rojo */
+/* Hero con patrón rojo + overlay para legibilidad */
 .hero{
-  position:relative;
   color:#fff;
-  background:url('patron_rojo.jpg') center/cover no-repeat;
+  position:relative;
+  background: url('patron_rojo.jpg') center/cover no-repeat;
   overflow:hidden;
 }
 .hero::before{
   content:"";
   position:absolute;inset:0;
-  background:rgba(157,33,72,0.85);
+  background:rgba(157,33,72,0.85); /* overlay guinda suave */
 }
-.hero .wrap{position:relative;padding:28px 16px 32px}
+.hero > .wrap{position:relative; padding:24px 16px 0} /* 0 bottom: lo gestiona la curva */
 
+/* Títulos */
 .hero-grid{
   display:grid;
   grid-template-columns:1fr auto;
   gap:16px;
   align-items:center;
 }
+h1{
+  font-family:'Cabin',sans-serif;
+  font-weight:700;
+  margin:0 0 8px;
+  line-height:1.08;
+}
+h1 .line{
+  display:block;
+  white-space:nowrap;
+  font-size:clamp(28px,6vw,50px);
+}
+.role{
+  color:var(--dorado);
+  font-weight:700;
+  margin:2px 0 6px;
+  font-size:clamp(16px,3.5vw,20px);
+}
+.org{
+  margin:0;
+  opacity:.98;
+  font-size:clamp(14px,2.7vw,18px);
+}
 
-h1{font-family:'Cabin',sans-serif;font-weight:700;margin:0 0 8px}
-h1 .line{display:block;font-size:clamp(28px,6vw,50px);white-space:nowrap}
-.role{color:var(--dorado);font-weight:700;margin-bottom:4px}
-.org{margin:0;opacity:.95;font-size:clamp(14px,2.7vw,18px)}
-
+/* Avatar */
 .avatar{
-  width:118px;height:118px;border-radius:50%;object-fit:cover;
-  border:3px solid #fff;outline:2px solid var(--dorado);outline-offset:-3px;
+  width:118px;height:118px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #fff;
+  outline:2px solid var(--dorado);
+  outline-offset:-3px;
   box-shadow:0 3px 12px rgba(0,0,0,.25);
+  animation: avatarPop .5s ease .2s both;
 }
 
-/* Curva orgánica */
-.hero-wave svg{width:100%;display:block}
-.wave-stroke{
-  stroke-dasharray:1800;
-  stroke-dashoffset:1800;
-  animation:drawWave 4.5s ease-out forwards;
+/* Curva orgánica inferior del hero */
+.curve{
+  position:relative;
+  z-index:0;
+}
+.curve svg{
+  display:block;
+  width:100%;
+  height:120px;
+}
+.curve-fill{
+  fill: var(--guinda); /* relleno bajo la curva para cerrar el hero */
+  opacity: 1;
+}
+.curve-stroke{
+  fill: none;
+  stroke: var(--dorado);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* Animación de trazado: ajusta duración a tu gusto */
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800;
+  animation: drawLine 3.2s ease forwards 0.2s;
 }
 
-@keyframes drawWave{
-  to{stroke-dashoffset:0}
-}
-
-/* Fondo blanco con patrón */
+/* Portada blanca: cubrir pantalla completa debajo del hero */
 .actions-bg{
   background:#fff url('patron_blanco.jpg') center/cover no-repeat;
-  padding:32px 0 48px;
+  min-height:100vh;         /* Cubre al menos la pantalla completa */
+  padding:22px 0 40px;
 }
 
-/* Botones */
-.actions{display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto}
+/* Botones sobrios: blanco + borde guinda + texto guinda */
+.actions{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  max-width:420px;
+  margin:0 auto;
+}
 .btn{
   display:flex;align-items:center;justify-content:center;gap:12px;
-  text-decoration:none;font-weight:700;border-radius:12px;
-  padding:10px 14px;
-  border:2px solid var(--guinda);border-bottom:3px solid var(--guinda);
-  background:#fff;color:var(--guinda);
-  transition:.2s;
+  text-decoration:none;
+  font-weight:700;
+  border-radius:12px;
+  padding:10px 14px;                     /* altura cómoda sin “llenar” pantalla */
+  border:2px solid var(--guinda);
+  border-bottom:3px solid var(--guinda); /* relieve sutil */
+  background:#fff;
+  color:var(--guinda);
+  transition:background .2s, transform .05s, box-shadow .2s;
+  box-shadow:0 0 0 rgba(0,0,0,0);
+  animation: btnIn .5s ease both;
 }
+.actions .btn:nth-child(1){animation-delay:.05s}
+.actions .btn:nth-child(2){animation-delay:.10s}
+.actions .btn:nth-child(3){animation-delay:.15s}
+.actions .btn:nth-child(4){animation-delay:.20s}
+
 .btn:hover{background:#f7f2f5}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{
+  outline:3px solid rgba(157,33,72,.25);
+  outline-offset:2px;
+  box-shadow:0 0 0 3px rgba(157,33,72,.15);
+}
+
 .icon svg{width:20px;height:20px;display:block}
 
+/* Animaciones base */
+@keyframes avatarPop{
+  0%{opacity:0; transform:scale(.94)}
+  100%{opacity:1; transform:scale(1)}
+}
+@keyframes drawLine{
+  from{stroke-dashoffset:1800}
+  to{stroke-dashoffset:0}
+}
+@keyframes btnIn{
+  from{opacity:0; transform:translateY(6px)}
+  to{opacity:1; transform:none}
+}
+@keyframes bandFade{
+  from{opacity:0} to{opacity:1}
+}
+
+/* Reduce motion para accesibilidad */
+@media (prefers-reduced-motion:reduce){
+  .avatar, .curve-stroke, .btn, .top-bar{animation:none}
+}
+
+/* Desktop: avatar algo mayor */
 @media(min-width:760px){
   .avatar{width:140px;height:140px}
 }
