@@ -5,10 +5,10 @@
 }
 
 *{box-sizing:border-box}
-body{margin:0;font-family:'Roboto',sans-serif;background:#fff;color:#111}
+body{margin:0;font-family:'Roboto',sans-serif;color:#111;background:#fff}
 .wrap{max-width:720px;margin:0 auto;padding:0 16px}
 
-/* Franja */
+/* Franja con patrón */
 .top-bar{
   background:#fff url('patron_blanco.jpg') center/cover no-repeat;
   height:82px;
@@ -23,18 +23,25 @@ body{margin:0;font-family:'Roboto',sans-serif;background:#fff;color:#111}
 .hero .wrap{padding:26px 16px}
 
 .hero-grid{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
-.hero h1{font-weight:700;font-size:36px;line-height:1.14;margin:0 0 8px}
+h1{font-family:'Cabin',sans-serif;font-weight:700;margin:0 0 8px;line-height:1.1}
+h1 .line{display:block;white-space:nowrap;font-size:clamp(28px,6vw,52px)}
 .role{color:var(--dorado);font-weight:700;margin-bottom:6px}
-.org{margin:0;opacity:.95}
+.org{margin:0;opacity:.95;font-size:clamp(14px,2.7vw,18px)}
 .avatar{width:118px;height:118px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 3px 12px rgba(0,0,0,.25)}
 
-/* Botones */
-.actions{padding:20px 0 36px;display:flex;flex-direction:column;gap:12px;max-width:420px;margin:auto}
-.btn{display:flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;font-weight:700;border-radius:12px;padding:12px 14px;border:2px solid var(--guinda);background:#fff;color:var(--guinda);transition:.2s}
+/* Fondo de la sección de acciones */
+.actions-bg{background:#fff url('patron_blanco.jpg') center/cover no-repeat;padding:22px 0 36px}
+
+/* Botones sobrios */
+.actions{display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto}
+.btn{display:flex;align-items:center;justify-content:center;gap:12px;
+     text-decoration:none;font-weight:700;border-radius:12px;
+     padding:12px 14px;border:2px solid var(--guinda);background:#fff;color:var(--guinda);
+     transition:background .2s, transform .05s}
 .btn:hover{background:#f7f2f5}
+.btn:active{transform:translateY(1px)}
 .icon svg{width:20px;height:20px}
 
 @media(min-width:760px){
-  .hero h1{font-size:52px}
   .avatar{width:140px;height:140px}
 }
