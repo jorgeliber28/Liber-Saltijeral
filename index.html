@@ -2,53 +2,90 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+
+  <!-- Hace que la página sea responsive en móvil -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Tarjeta digital — Jorge Liber Saltijeral Giles</title>
-  <meta name="description" content="Contacto de Jorge Liber Saltijeral Giles — Asesor, Secretaría del Medio Ambiente de la Ciudad de México. WhatsApp, vCard, LinkedIn y página institucional." />
-  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Descripción para previews (WhatsApp, redes, etc.).
+       OJO: esto no obliga a indexar, solo describe la página. -->
+  <meta name="description"
+        content="Contacto de Jorge Liber Saltijeral Giles — Asesor, Secretaría del Medio Ambiente de la Ciudad de México. WhatsApp, vCard, LinkedIn y página institucional." />
+
+  <!-- Meta para pedir a los buscadores que NO indexen la página.
+       No es garantía absoluta, pero es la práctica estándar. -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Tipografías: Cabin para el nombre, Roboto para el resto -->
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+  <!-- Hoja de estilos principal -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Franja superior blanca -->
+
+  <!-- ░░ Franja superior blanca con el logo ░░ -->
+  <!-- Solo se muestra el logo institucional sobre fondo blanco -->
   <header class="top-bar">
+    <!-- IMPORTANTE: el archivo debe llamarse exactamente logo.png -->
     <img src="logo.png" alt="Secretaría del Medio Ambiente">
   </header>
 
-  <!-- Cabecera con patrón rojo + overlay -->
+  <!-- ░░ Cabecera guinda con tu nombre, cargo y foto ░░ -->
   <section class="hero">
     <div class="wrap">
       <div class="hero-grid">
+
+        <!-- Bloque de textos (nombre, cargo, dependencia) -->
         <div class="hero-titles">
           <h1>
+            <!-- Primera línea del nombre -->
             <span class="line">Jorge Liber</span>
+            <!-- Segunda línea -->
             <span class="line">Saltijeral Giles</span>
           </h1>
+
+          <!-- Cargo -->
           <div class="role">Asesor</div>
-          <p class="org">Secretaría del Medio Ambiente de la Ciudad de México</p>
+
+          <!-- Dependencia institucional -->
+          <p class="org">
+            Secretaría del Medio Ambiente de la Ciudad de México
+          </p>
         </div>
+
+        <!-- Foto en círculo -->
         <figure class="avatar-wrap">
+          <!-- IMPORTANTE: el archivo debe llamarse foto.jpg -->
           <img class="avatar" src="foto.jpg" alt="Foto de Jorge Liber">
         </figure>
+
       </div>
     </div>
 
-    <!-- Curva orgánica con línea dorada animada -->
+    <!-- Curva orgánica con relleno blanco y línea dorada animada -->
     <div class="curve">
       <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <!-- Relleno blanco que abre paso al fondo de botones -->
         <path class="curve-fill"
-              d="M0,80 C240,140 480,20 720,80 S1200,140 1440,80 L1440,120 L0,120 Z"/>
+              d="M0,80 C240,140 480,20 720,80 S1200,140 1440,80 L1440,120 L0,120 Z" />
+        <!-- Línea dorada que sigue la curva (la animación está en CSS) -->
         <path class="curve-stroke"
-              d="M0,80 C240,140 480,20 720,80 S1200,140 1440,80"/>
+              d="M0,80 C240,140 480,20 720,80 S1200,140 1440,80" />
       </svg>
     </div>
   </section>
 
-  <!-- Acciones -->
+  <!-- ░░ Sección de acciones (botones) sobre patrón blanco ░░ -->
   <section class="actions-bg">
     <main class="wrap actions">
-      <!-- WhatsApp -->
+
+      <!-- Botón WhatsApp -->
       <a class="btn" href="https://wa.me/525533312276" target="_blank" rel="noopener">
         <span class="icon" aria-hidden="true">
+          <!-- Icono WhatsApp -->
           <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
             <path fill="#9d2148" d="M128 24a88 88 0 0 0-76.3 129.9L40 216l62.7-11.9A88 88 0 1 0 128 24Zm0 160a72 72 0 0 1-36.7-9.9l-2.6-1.6l-37.3 7.1l7.1-37.3l-1.6-2.6A72 72 0 1 1 128 184Zm39.7-41.6c-2.2 6.2-12.5 11.8-17.5 12.1c-4.5.3-10.1.4-26.2-5.4c-22-8-36.1-31-37.2-32.4c-1-1.4-8.9-11.9-8.9-22.7s5.5-16.1 7.4-18.3c2.2-2.4 4.8-3 6.4-3s3.2.1 4.5.1c1.4 0 3.4-.8 5.3 4.1c2 5 6.9 17.1 7.5 18.3c.6 1.2 1 2.6.2 4c-.8 1.4-1.2 2.6-2.4 4c-1.2 1.4-2.6 3-3.7 4c-1.2 1-2.4 2.2-1 4.6c1.4 2.4 6.3 10.4 13.6 16.9c9.4 8.4 17.4 11 19.8 12.2c2.4 1.2 3.8 1 5.2-.2c1.4-1.2 6-7 7.6-9.4c1.6-2.4 3.2-2 5.3-1.2c2.2.8 13.9 6.6 16.3 7.8c2.4 1.2 4 1.8 4.6 2.8c.7 1 0 6.1-2.2 12.3Z"/>
           </svg>
@@ -56,9 +93,10 @@
         WhatsApp
       </a>
 
-      <!-- vCard -->
+      <!-- Botón vCard (descargar contacto) -->
       <a class="btn" href="contact.vcf" download="Jorge_Liber_Saltijeral.vcf">
         <span class="icon" aria-hidden="true">
+          <!-- Icono credencial/contacto -->
           <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
             <path fill="#9d2148" d="M216 40H40a16 16 0 0 0-16 16v144a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V56a16 16 0 0 0-16-16Zm0 160H40V56h176v144ZM88 168h48a24 24 0 0 0-48 0Zm24-32a24 24 0 1 0-24-24a24 24 0 0 0 24 24Zm64-40h32v16h-32Zm0 32h40v16h-40Z"/>
           </svg>
@@ -66,9 +104,10 @@
         Agregar contacto
       </a>
 
-      <!-- LinkedIn -->
+      <!-- Botón LinkedIn -->
       <a class="btn" href="https://www.linkedin.com/in/jorge-liber-saltijeral-giles-628a7740/" target="_blank" rel="noopener">
         <span class="icon" aria-hidden="true">
+          <!-- Icono LinkedIn -->
           <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
             <path fill="#9d2148" d="M216 24H40a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V40a16 16 0 0 0-16-16ZM96 192H64V112h32v80Zm-16-96a16 16 0 1 1 16-16a16 16 0 0 1-16 16Zm112 96h-32v-44c0-10.5-4.2-16.2-12.9-16.2c-6.3 0-9.9 3.6-11.6 7.1c-.6 1.4-.8 3.4-.8 5.4V192h-32v-80h32v12c4.6-7.2 13.1-14.2 27.7-14.2c19.7 0 32.6 12.9 32.6 39.7V192Z"/>
           </svg>
@@ -76,15 +115,17 @@
         LinkedIn
       </a>
 
-      <!-- Página institucional -->
+      <!-- Botón página institucional -->
       <a class="btn" href="https://sedema.cdmx.gob.mx/" target="_blank" rel="noopener">
         <span class="icon" aria-hidden="true">
+          <!-- Icono link externo -->
           <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
             <path fill="#9d2148" d="M152 32h72v72h-24V78.6L121.9 156l-22.6-22.6L177.4 56H152V32ZM40 64h80v16H56v96h96v-40h16v56H40V64Z"/>
           </svg>
         </span>
         Página institucional
       </a>
+
     </main>
   </section>
 </body>
