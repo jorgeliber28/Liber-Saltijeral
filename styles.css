@@ -1,10 +1,8 @@
 :root{
-  --guinda:#9d2148;    /* Pantone 7420 C */
-  --dorado:#b28e5c;    /* Pantone 465 C */
+  --guinda:#9d2148;
+  --dorado:#b28e5c;
   --blanco:#ffffff;
   --gris:#111;
-
-  /* velocidad del trazo dorado de la curva */
   --curve-speed: 2.8s;
 }
 
@@ -18,9 +16,9 @@ body{
 }
 .wrap{max-width:720px;margin:0 auto;padding:0 16px}
 
-/* Franja superior con patrón (logo legible) */
+/* Franja superior completamente blanca */
 .top-bar{
-  background:#fff; /* ya no usa patrón */
+  background:#fff; /* sin patrón */
   height:82px;
   display:flex;align-items:center;justify-content:center;
   border-bottom:3px solid var(--dorado);
@@ -28,7 +26,7 @@ body{
 }
 .top-bar img{height:54px;width:auto}
 
-/* Hero con patrón rojo + overlay (menos opacidad) */
+/* Hero */
 .hero{
   color:#fff;
   position:relative;
@@ -38,41 +36,17 @@ body{
 .hero::before{
   content:"";
   position:absolute;inset:0;
-  background:rgba(157,33,72,0.74); /* más detalle del patrón */
+  background:rgba(157,33,72,0.74);
 }
 .hero > .wrap{position:relative; padding:18px 16px 8px; animation: heroIn .7s ease .05s both;}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:16px;
-  align-items:center;
-}
-h1{
-  font-family:'Cabin',sans-serif;
-  font-weight:700;
-  margin:0 0 6px;
-  line-height:1.06;
-}
-h1 .line{
-  display:block;
-  white-space:nowrap;
-  font-size:clamp(28px,6vw,50px);
-}
-.role{
-  color:var(--dorado);
-  font-weight:700;
-  margin:2px 0 6px;
-  font-size:clamp(16px,3.5vw,20px);
-}
-.org{
-  margin:0;
-  opacity:.98;
-  font-size:clamp(14px,2.7vw,18px);
-}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+h1{font-family:'Cabin',sans-serif;font-weight:700;margin:0 0 6px;line-height:1.06}
+h1 .line{display:block;white-space:nowrap;font-size:clamp(28px,6vw,50px)}
+.role{color:var(--dorado);font-weight:700;margin:2px 0 6px;font-size:clamp(16px,3.5vw,20px)}
+.org{margin:0;opacity:.98;font-size:clamp(14px,2.7vw,18px)}
 
 .avatar{
-  width:132px;height:132px;            /* más grande en móvil */
+  width:132px;height:132px;
   border-radius:50%;
   object-fit:cover;
   border:3px solid #fff;
@@ -82,10 +56,10 @@ h1 .line{
   animation: avatarPop .5s ease .2s both;
 }
 
-/* Curva orgánica + trazo dorado animado */
-.curve{ position:relative; z-index:1; }
-.curve svg{ display:block; width:100%; height:auto; }
-.curve-fill{ fill:#fff; }                /* abre paso al fondo blanco */
+/* Curva orgánica */
+.curve{position:relative;z-index:1}
+.curve svg{display:block;width:100%;height:auto}
+.curve-fill{fill:#fff}
 .curve-stroke{
   fill:none;
   stroke:var(--dorado);
@@ -96,31 +70,22 @@ h1 .line{
   animation: draw var(--curve-speed) ease-out .2s forwards;
 }
 
-/* Fondo de acciones: patrón blanco cubriendo toda la pantalla restante */
+/* Fondo de acciones */
 .actions-bg{
   background:#fff url('patron_blanco.jpg') center/cover no-repeat;
-  min-height:calc(100vh - 82px);        /* ocupa todo lo visible bajo la franja */
+  min-height:calc(100vh - 82px);
   padding:22px 0 64px;
 }
 
-/* Botones sobrios */
-.actions{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  max-width:420px;
-  margin:0 auto;
-}
+/* Botones */
+.actions{display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto}
 .btn{
   display:flex;align-items:center;justify-content:center;gap:12px;
-  text-decoration:none;
-  font-weight:700;
-  border-radius:12px;
+  text-decoration:none;font-weight:700;border-radius:12px;
   padding:10px 14px;
   border:2px solid var(--guinda);
   border-bottom:3px solid var(--guinda);
-  background:#fff;
-  color:var(--guinda);
+  background:#fff;color:var(--guinda);
   transition:background .2s, transform .05s, box-shadow .2s;
   box-shadow:0 0 0 rgba(0,0,0,0);
   animation: btnIn .5s ease both;
@@ -140,31 +105,12 @@ h1 .line{
 .icon svg{width:20px;height:20px;display:block}
 
 /* Animaciones */
-@keyframes heroIn{
-  from{opacity:0; transform:translateY(8px)}
-  to{opacity:1; transform:none}
-}
-@keyframes avatarPop{
-  0%{opacity:0; transform:scale(.94)}
-  100%{opacity:1; transform:scale(1)}
-}
-@keyframes draw{
-  to{ stroke-dashoffset:0 }
-}
-@keyframes btnIn{
-  from{opacity:0; transform:translateY(6px)}
-  to{opacity:1; transform:none}
-}
-@keyframes bandFade{
-  from{opacity:0} to{opacity:1}
-}
+@keyframes heroIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes avatarPop{0%{opacity:0;transform:scale(.94)}100%{opacity:1;transform:scale(1)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes btnIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes bandFade{from{opacity:0}to{opacity:1}}
 
-/* Reduce motion para accesibilidad */
-@media (prefers-reduced-motion:reduce){
-  .btn, .hero > .wrap, .avatar, .curve-stroke, .top-bar{animation:none}
-}
-
-/* Desktop */
 @media(min-width:760px){
   .avatar{width:168px;height:168px}
 }
