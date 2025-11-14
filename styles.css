@@ -20,7 +20,7 @@ body{
 
 /* Franja superior con patrón (logo legible) */
 .top-bar{
-  background:#fff url('patron_blanco.jpg') center/cover no-repeat;
+  background:#fff; /* ya no usa patrón */
   height:82px;
   display:flex;align-items:center;justify-content:center;
   border-bottom:3px solid var(--dorado);
