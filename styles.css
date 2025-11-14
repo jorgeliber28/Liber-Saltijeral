@@ -1,8 +1,10 @@
 :root{
-  --guinda:#9d2148;
-  --dorado:#b28e5c;
+  --guinda:#9d2148;    /* Guinda institucional */
+  --dorado:#b28e5c;    /* Dorado institucional */
   --blanco:#ffffff;
   --gris:#111;
+
+  /* Velocidad del trazo dorado de la curva */
   --curve-speed: 2.8s;
 }
 
@@ -14,19 +16,29 @@ body{
   color:var(--gris);
   background:#fff;
 }
-.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+.wrap{
+  max-width:720px;
+  margin:0 auto;
+  padding:0 16px;
+}
 
-/* Franja superior completamente blanca */
+/* ░░ Franja superior blanca con logo ░░ */
 .top-bar{
-  background:#fff; /* sin patrón */
+  background:#fff;                /* YA SIN PATRÓN, 100% blanco */
   height:82px;
-  display:flex;align-items:center;justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   border-bottom:3px solid var(--dorado);
   animation: bandFade .6s ease both;
 }
-.top-bar img{height:54px;width:auto}
+/* Tamaño del logo (ajusta height para hacerlo más grande o pequeño) */
+.top-bar img{
+  height:64px;                    /* ANTES 54px → ahora más grande */
+  width:auto;
+}
 
-/* Hero */
+/* ░░ Hero con patrón rojo + overlay ░░ */
 .hero{
   color:#fff;
   position:relative;
@@ -35,18 +47,49 @@ body{
 }
 .hero::before{
   content:"";
-  position:absolute;inset:0;
-  background:rgba(157,33,72,0.74);
+  position:absolute;
+  inset:0;
+  background:rgba(157,33,72,0.74);  /* Ajusta la opacidad del overlay */
 }
-.hero > .wrap{position:relative; padding:18px 16px 8px; animation: heroIn .7s ease .05s both;}
-.hero-grid{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
-h1{font-family:'Cabin',sans-serif;font-weight:700;margin:0 0 6px;line-height:1.06}
-h1 .line{display:block;white-space:nowrap;font-size:clamp(28px,6vw,50px)}
-.role{color:var(--dorado);font-weight:700;margin:2px 0 6px;font-size:clamp(16px,3.5vw,20px)}
-.org{margin:0;opacity:.98;font-size:clamp(14px,2.7vw,18px)}
+.hero > .wrap{
+  position:relative;
+  padding:18px 16px 8px;
+  animation: heroIn .7s ease .05s both;
+}
 
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:16px;
+  align-items:center;
+}
+h1{
+  font-family:'Cabin',sans-serif;
+  font-weight:700;
+  margin:0 0 6px;
+  line-height:1.06;
+}
+h1 .line{
+  display:block;
+  white-space:nowrap;
+  font-size:clamp(28px,6vw,50px);
+}
+.role{
+  color:var(--dorado);
+  font-weight:700;
+  margin:2px 0 6px;
+  font-size:clamp(16px,3.5vw,20px);
+}
+.org{
+  margin:0;
+  opacity:.98;
+  font-size:clamp(14px,2.7vw,18px);
+}
+
+/* Foto circular */
 .avatar{
-  width:132px;height:132px;
+  width:132px;
+  height:132px;                   /* Más grande en móvil */
   border-radius:50%;
   object-fit:cover;
   border:3px solid #fff;
@@ -56,40 +99,62 @@ h1 .line{display:block;white-space:nowrap;font-size:clamp(28px,6vw,50px)}
   animation: avatarPop .5s ease .2s both;
 }
 
-/* Curva orgánica */
-.curve{position:relative;z-index:1}
-.curve svg{display:block;width:100%;height:auto}
-.curve-fill{fill:#fff}
+/* ░░ Curva orgánica con línea dorada animada ░░ */
+.curve{
+  position:relative;
+  z-index:1;
+}
+.curve svg{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.curve-fill{
+  fill:#fff;                      /* Fondo blanco que conecta con la sección inferior */
+}
 .curve-stroke{
   fill:none;
   stroke:var(--dorado);
-  stroke-width:11;
+  stroke-width:14;                /* ANTES 11 → línea dorada MÁS GRUESA */
   stroke-linecap:round;
   stroke-dasharray:1000;
   stroke-dashoffset:1000;
   animation: draw var(--curve-speed) ease-out .2s forwards;
 }
 
-/* Fondo de acciones */
+/* ░░ Fondo de acciones con patrón blanco ░░ */
 .actions-bg{
   background:#fff url('patron_blanco.jpg') center/cover no-repeat;
-  min-height:calc(100vh - 82px);
+  min-height:calc(100vh - 82px);  /* Ocupa toda la pantalla bajo la franja */
   padding:22px 0 64px;
 }
 
-/* Botones */
-.actions{display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto}
+/* ░░ Botones ░░ */
+.actions{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  max-width:420px;
+  margin:0 auto;
+}
 .btn{
-  display:flex;align-items:center;justify-content:center;gap:12px;
-  text-decoration:none;font-weight:700;border-radius:12px;
-  padding:10px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  text-decoration:none;
+  font-weight:700;
+  border-radius:12px;
+  padding:10px 14px;              /* Altura del botón */
   border:2px solid var(--guinda);
   border-bottom:3px solid var(--guinda);
-  background:#fff;color:var(--guinda);
+  background:#fff;
+  color:var(--guinda);
   transition:background .2s, transform .05s, box-shadow .2s;
   box-shadow:0 0 0 rgba(0,0,0,0);
   animation: btnIn .5s ease both;
 }
+/* Retrasos sutiles para la aparición escalonada */
 .actions .btn:nth-child(1){animation-delay:.05s}
 .actions .btn:nth-child(2){animation-delay:.1s}
 .actions .btn:nth-child(3){animation-delay:.15s}
@@ -102,15 +167,50 @@ h1 .line{display:block;white-space:nowrap;font-size:clamp(28px,6vw,50px)}
   outline-offset:2px;
   box-shadow:0 0 0 3px rgba(157,33,72,.15);
 }
-.icon svg{width:20px;height:20px;display:block}
 
-/* Animaciones */
-@keyframes heroIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@keyframes avatarPop{0%{opacity:0;transform:scale(.94)}100%{opacity:1;transform:scale(1)}}
-@keyframes draw{to{stroke-dashoffset:0}}
-@keyframes btnIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@keyframes bandFade{from{opacity:0}to{opacity:1}}
+/* Tamaño general de los íconos de los botones */
+.icon svg{
+  width:20px;
+  height:20px;
+  display:block;
+}
 
+/* ░░ Animaciones ░░ */
+@keyframes heroIn{
+  from{opacity:0; transform:translateY(8px)}
+  to{opacity:1; transform:none}
+}
+@keyframes avatarPop{
+  0%{opacity:0; transform:scale(.94)}
+  100%{opacity:1; transform:scale(1)}
+}
+@keyframes draw{
+  to{ stroke-dashoffset:0 }
+}
+@keyframes btnIn{
+  from{opacity:0; transform:translateY(6px)}
+  to{opacity:1; transform:none}
+}
+@keyframes bandFade{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* Reduce motion (accesibilidad) */
+@media (prefers-reduced-motion:reduce){
+  .btn,
+  .hero > .wrap,
+  .avatar,
+  .curve-stroke,
+  .top-bar{
+    animation:none;
+  }
+}
+
+/* ░░ Ajustes para pantallas grandes ░░ */
 @media(min-width:760px){
-  .avatar{width:168px;height:168px}
+  .avatar{
+    width:168px;
+    height:168px;
+  }
 }
