@@ -3,9 +3,7 @@
   --dorado:#b28e5c;    /* Dorado institucional */
   --blanco:#ffffff;
   --gris:#111;
-
-  /* Velocidad del trazo dorado de la curva */
-  --curve-speed: 2.8s;
+  --curve-speed: 2.8s; /* Velocidad trazo dorado */
 }
 
 *{box-sizing:border-box}
@@ -22,11 +20,9 @@ body{
   padding:0 16px;
 }
 
-/* ──────────────────────
-   1. Banner superior blanco
-   ────────────────────── */
+/* 1. Banner superior blanco */
 .top-bar{
-  background:#fff;                 /* ahora es solo blanco, sin patrón */
+  background:#fff;
   height:82px;
   display:flex;
   align-items:center;
@@ -34,16 +30,12 @@ body{
   border-bottom:3px solid var(--dorado);
   animation: bandFade .6s ease both;
 }
-
-/* Logo en la franja (más grande) */
 .top-bar img{
-  height:72px;                     /* incrementado desde 54px */
+  height:72px;      /* logo más grande */
   width:auto;
 }
 
-/* ──────────────────────
-   2. Hero con patrón rojo y overlay
-   ────────────────────── */
+/* 2. Hero con patrón rojo */
 .hero{
   color:#fff;
   position:relative;
@@ -54,10 +46,10 @@ body{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(157,33,72,0.74); /* overlay guinda para texto legible */
+  background:rgba(157,33,72,0.74);
 }
 .hero > .wrap{
-  position:relative;               /* por encima del overlay */
+  position:relative;
   padding:18px 16px 8px;
   animation: heroIn .7s ease .05s both;
 }
@@ -67,8 +59,6 @@ body{
   gap:16px;
   align-items:center;
 }
-
-/* Nombre en dos líneas */
 h1{
   font-family:'Cabin',sans-serif;
   font-weight:700;
@@ -80,8 +70,6 @@ h1 .line{
   white-space:nowrap;
   font-size:clamp(28px,6vw,50px);
 }
-
-/* Cargo y dependencia */
 .role{
   color:var(--dorado);
   font-weight:700;
@@ -107,45 +95,34 @@ h1 .line{
   animation: avatarPop .5s ease .2s both;
 }
 
-/* ──────────────────────
-   3. Curva orgánica con trazo dorado
-   ────────────────────── */
-.curve{
-  position:relative;
-  z-index:1;
-}
-.curve svg{
-  display:block;
-  width:100%;
-  height:auto;
-}
-.curve-fill{
-  fill:#fff;
-}
-
-/* grosor de la línea dorada (ya aumentado) */
+/* 3. Curva orgánica */
+.curve{position:relative;z-index:1}
+.curve svg{display:block;width:100%;height:auto}
+.curve-fill{fill:#fff}
 .curve-stroke{
   fill:none;
   stroke:var(--dorado);
-  stroke-width:13;                 /* aquí ajustas si quieres más o menos grosor */
+  stroke-width:13;              /* grosor de la línea dorada */
   stroke-linecap:round;
   stroke-dasharray:1000;
   stroke-dashoffset:1000;
   animation: draw var(--curve-speed) ease-out .2s forwards;
 }
 
-/* ──────────────────────
-   4. Fondo de acciones (patrón blanco)
-   ────────────────────── */
+/* 4. Fondo de acciones (patrón blanco) */
 .actions-bg{
   background:#fff url('patron_blanco.jpg') center/cover no-repeat;
-  min-height:calc(100vh - 82px);   /* cubre toda la pantalla bajo la franja */
-  padding:22px 0 64px;
+  padding:22px 0 32px;          /* menos aire debajo */
 }
 
-/* ──────────────────────
-   5. Botones
-   ────────────────────── */
+/* min-height solo en pantallas pequeñas para que se vea “lleno” */
+@media (max-width: 768px){
+  .actions-bg{
+    min-height:calc(100vh - 82px);
+  }
+}
+
+/* 5. Botones */
 .actions{
   display:flex;
   flex-direction:column;
@@ -161,9 +138,9 @@ h1 .line{
   text-decoration:none;
   font-weight:700;
   border-radius:12px;
-  padding:10px 14px;               /* altura del botón */
+  padding:10px 14px;
   border:2px solid var(--guinda);
-  border-bottom:3px solid var(--guinda); /* relieve */
+  border-bottom:3px solid var(--guinda);
   background:#fff;
   color:var(--guinda);
   transition:background .2s, transform .05s, box-shadow .2s;
@@ -174,41 +151,30 @@ h1 .line{
 .actions .btn:nth-child(2){animation-delay:.1s}
 .actions .btn:nth-child(3){animation-delay:.15s}
 .actions .btn:nth-child(4){animation-delay:.2s}
-
-.btn:hover{
-  background:#f7f2f5;
-}
-.btn:active{
-  transform:translateY(1px);
-}
+.btn:hover{background:#f7f2f5}
+.btn:active{transform:translateY(1px)}
 .btn:focus-visible{
   outline:3px solid rgba(157,33,72,.25);
   outline-offset:2px;
   box-shadow:0 0 0 3px rgba(157,33,72,.15);
 }
-
-/* Iconos SVG de los botones */
 .icon svg{
   width:20px;
   height:20px;
   display:block;
 }
 
-/* ──────────────────────
-   6. Corazón CDMX debajo de los botones
-   ────────────────────── */
+/* 6. Corazón CDMX debajo de los botones */
 .hero-heart{
   display:block;
-  margin:12px auto 0;              /* centrado debajo del último botón */
-  width:130px;                      /* tamaño del corazón (ajustable) */
+  margin:6px auto 0;                    /* más pegado al botón */
+  width:clamp(110px, 15vw, 170px);      /* responsive: min 110, ideal 15vw, max 170 */
   height:auto;
   animation: heartbeat 1.6s ease-in-out infinite;
   pointer-events:none;
 }
 
-/* ──────────────────────
-   7. Animaciones
-   ────────────────────── */
+/* 7. Animaciones */
 @keyframes heroIn{
   from{opacity:0; transform:translateY(8px)}
   to{opacity:1; transform:none}
@@ -227,7 +193,6 @@ h1 .line{
 @keyframes bandFade{
   from{opacity:0} to{opacity:1}
 }
-/* latido del corazón */
 @keyframes heartbeat{
   0%  {transform:scale(1)}
   10% {transform:scale(1.12)}
@@ -237,7 +202,7 @@ h1 .line{
   100%{transform:scale(1)}
 }
 
-/* Reducir animaciones si el usuario lo pide */
+/* Reduce animaciones si el usuario lo pide */
 @media (prefers-reduced-motion:reduce){
   .btn,
   .hero > .wrap,
