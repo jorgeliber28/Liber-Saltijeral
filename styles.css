@@ -23,10 +23,10 @@ body{
 }
 
 /* ──────────────────────
-   1. Banner superior (blanco)
+   1. Banner superior blanco
    ────────────────────── */
 .top-bar{
-  background:#fff;                 /* AQUÍ eliminamos el patrón: solo blanco */
+  background:#fff;                 /* ahora es solo blanco, sin patrón */
   height:82px;
   display:flex;
   align-items:center;
@@ -35,14 +35,14 @@ body{
   animation: bandFade .6s ease both;
 }
 
-/* Tamaño del logo en la franja superior  (ajustado a más grande) */
+/* Logo en la franja (más grande) */
 .top-bar img{
-  height:72px;                     /* antes 54px: ahora el logo se ve más grande */
+  height:72px;                     /* incrementado desde 54px */
   width:auto;
 }
 
 /* ──────────────────────
-   2. Hero con patrón rojo
+   2. Hero con patrón rojo y overlay
    ────────────────────── */
 .hero{
   color:#fff;
@@ -50,23 +50,17 @@ body{
   background:url('patron_rojo.jpg') center/cover no-repeat;
   overflow:hidden;
 }
-
-/* Overlay guinda semitransparente para dar legibilidad al texto */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(157,33,72,0.74);
+  background:rgba(157,33,72,0.74); /* overlay guinda para texto legible */
 }
-
-/* Contenido principal del hero */
 .hero > .wrap{
-  position:relative;               /* queda por encima del overlay */
+  position:relative;               /* por encima del overlay */
   padding:18px 16px 8px;
   animation: heroIn .7s ease .05s both;
 }
-
-/* Layout de la cabecera (nombre + foto) */
 .hero-grid{
   display:grid;
   grid-template-columns:1fr auto;
@@ -74,7 +68,7 @@ body{
   align-items:center;
 }
 
-/* Título principal (nombre) */
+/* Nombre en dos líneas */
 h1{
   font-family:'Cabin',sans-serif;
   font-weight:700;
@@ -87,15 +81,13 @@ h1 .line{
   font-size:clamp(28px,6vw,50px);
 }
 
-/* Cargo */
+/* Cargo y dependencia */
 .role{
   color:var(--dorado);
   font-weight:700;
   margin:2px 0 6px;
   font-size:clamp(16px,3.5vw,20px);
 }
-
-/* Dependencia */
 .org{
   margin:0;
   opacity:.98;
@@ -115,19 +107,8 @@ h1 .line{
   animation: avatarPop .5s ease .2s both;
 }
 
-/* Corazón CDMX animado (archivo: corazon.png) */
-.hero-heart{
-  position:absolute;
-  right:18px;
-  bottom:38px;                     /* ajusta posición vertical si lo necesitas */
-  width:80px;                      /* tamaño del corazón */
-  height:auto;
-  animation: heartbeat 1.6s ease-in-out infinite;
-  pointer-events:none;             /* no interfiere con los clics */
-}
-
 /* ──────────────────────
-   3. Curva orgánica + trazo dorado
+   3. Curva orgánica con trazo dorado
    ────────────────────── */
 .curve{
   position:relative;
@@ -142,11 +123,11 @@ h1 .line{
   fill:#fff;
 }
 
-/* Grosor de la línea dorada (aquí lo hicimos más grueso) */
+/* grosor de la línea dorada (ya aumentado) */
 .curve-stroke{
   fill:none;
   stroke:var(--dorado);
-  stroke-width:13;                 /* antes 11: aumenta grosor del trazo */
+  stroke-width:13;                 /* aquí ajustas si quieres más o menos grosor */
   stroke-linecap:round;
   stroke-dasharray:1000;
   stroke-dashoffset:1000;
@@ -154,16 +135,16 @@ h1 .line{
 }
 
 /* ──────────────────────
-   4. Fondo de la sección de botones
+   4. Fondo de acciones (patrón blanco)
    ────────────────────── */
 .actions-bg{
   background:#fff url('patron_blanco.jpg') center/cover no-repeat;
-  min-height:calc(100vh - 82px);   /* ocupa toda la pantalla bajo la franja */
+  min-height:calc(100vh - 82px);   /* cubre toda la pantalla bajo la franja */
   padding:22px 0 64px;
 }
 
 /* ──────────────────────
-   5. Botones (WhatsApp, contacto, etc.)
+   5. Botones
    ────────────────────── */
 .actions{
   display:flex;
@@ -182,7 +163,7 @@ h1 .line{
   border-radius:12px;
   padding:10px 14px;               /* altura del botón */
   border:2px solid var(--guinda);
-  border-bottom:3px solid var(--guinda);
+  border-bottom:3px solid var(--guinda); /* relieve */
   background:#fff;
   color:var(--guinda);
   transition:background .2s, transform .05s, box-shadow .2s;
@@ -206,7 +187,7 @@ h1 .line{
   box-shadow:0 0 0 3px rgba(157,33,72,.15);
 }
 
-/* Iconos SVG dentro de los botones */
+/* Iconos SVG de los botones */
 .icon svg{
   width:20px;
   height:20px;
@@ -214,7 +195,19 @@ h1 .line{
 }
 
 /* ──────────────────────
-   6. Animaciones
+   6. Corazón CDMX debajo de los botones
+   ────────────────────── */
+.hero-heart{
+  display:block;
+  margin:26px auto 0;              /* centrado debajo del último botón */
+  width:80px;                      /* tamaño del corazón (ajustable) */
+  height:auto;
+  animation: heartbeat 1.6s ease-in-out infinite;
+  pointer-events:none;
+}
+
+/* ──────────────────────
+   7. Animaciones
    ────────────────────── */
 @keyframes heroIn{
   from{opacity:0; transform:translateY(8px)}
@@ -224,20 +217,17 @@ h1 .line{
   0%{opacity:0; transform:scale(.94)}
   100%{opacity:1; transform:scale(1)}
 }
-/* Trazo dorado de la curva */
 @keyframes draw{
   to{ stroke-dashoffset:0 }
 }
-/* Entrada de los botones */
 @keyframes btnIn{
   from{opacity:0; transform:translateY(6px)}
   to{opacity:1; transform:none}
 }
-/* Aparición suave de la franja superior */
 @keyframes bandFade{
   from{opacity:0} to{opacity:1}
 }
-/* Latido del corazón */
+/* latido del corazón */
 @keyframes heartbeat{
   0%  {transform:scale(1)}
   10% {transform:scale(1.12)}
@@ -247,7 +237,7 @@ h1 .line{
   100%{transform:scale(1)}
 }
 
-/* Reducir animaciones para quien tenga preferencias de accesibilidad */
+/* Reducir animaciones si el usuario lo pide */
 @media (prefers-reduced-motion:reduce){
   .btn,
   .hero > .wrap,
@@ -259,7 +249,7 @@ h1 .line{
   }
 }
 
-/* Versión desktop: agranda la foto */
+/* Desktop: avatar más grande */
 @media(min-width:760px){
   .avatar{width:168px;height:168px}
 }
