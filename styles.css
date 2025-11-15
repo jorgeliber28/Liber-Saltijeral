@@ -199,8 +199,8 @@ h1 .line{
    ────────────────────── */
 .hero-heart{
   display:block;
-  margin:20px auto 0;              /* centrado debajo del último botón */
-  width:100px;                      /* tamaño del corazón (ajustable) */
+  margin:12px auto 0;              /* centrado debajo del último botón */
+  width:130px;                      /* tamaño del corazón (ajustable) */
   height:auto;
   animation: heartbeat 1.6s ease-in-out infinite;
   pointer-events:none;
