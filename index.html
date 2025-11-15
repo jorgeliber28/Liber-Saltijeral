@@ -8,42 +8,36 @@
 
   <title>Tarjeta digital — Jorge Liber Saltijeral Giles</title>
 
-  <!-- Descripción para vistas previas (WhatsApp, redes, etc.).
-       Esto NO controla la aparición en Google, solo el snippet. -->
+  <!-- Descripción solo para vistas previas (WhatsApp, redes, etc.) -->
   <meta name="description"
         content="Contacto de Jorge Liber Saltijeral Giles — Asesor, Secretaría del Medio Ambiente de la Ciudad de México. WhatsApp, vCard, LinkedIn y página institucional." />
 
-  <!-- Pedimos a los buscadores que NO indexen ni sigan enlaces de esta página -->
+  <!-- Bloquea indexación en buscadores (noindex, nofollow) -->
   <meta name="robots" content="noindex,nofollow" />
 
-  <!-- Tipografías: Cabin para títulos, Roboto para cuerpo -->
+  <!-- Tipografías institucionales -->
   <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Hoja de estilos principal -->
+  <!-- Hoja de estilos -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Franja superior blanca (banner detrás del logo) -->
-  <!-- El archivo del logo debe llamarse exactamente logo.png -->
+  <!-- ░░░ Franja superior blanca (logo institucional) ░░░ -->
+  <!-- El archivo debe llamarse logo.png -->
   <header class="top-bar">
     <img src="logo.png" alt="Secretaría del Medio Ambiente">
   </header>
 
-  <!-- Cabecera con patrón rojo + overlay guinda -->
+  <!-- ░░░ Hero guinda con patrón rojo, nombre, cargo y foto ░░░ -->
   <section class="hero">
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-titles">
-          <!-- Nombre en dos líneas, cada span es una línea independiente -->
           <h1>
             <span class="line">Jorge Liber</span>
             <span class="line">Saltijeral Giles</span>
           </h1>
-
-          <!-- Cargo en dorado -->
           <div class="role">Asesor</div>
-
-          <!-- Dependencia -->
           <p class="org">Secretaría del Medio Ambiente de la Ciudad de México</p>
         </div>
 
@@ -54,24 +48,20 @@
       </div>
     </div>
 
-    <!-- Ícono de corazón CDMX con animación de latido -->
-    <!-- El archivo debe llamarse corazon.png (puedes ajustar en CSS tamaños/posición) -->
-    <img src="corazon.png" alt="Corazón Ciudad de México" class="hero-heart">
-
     <!-- Curva orgánica con relleno blanco y línea dorada animada -->
-    <div class="curve">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <!-- Relleno blanco que "abre" hacia la sección de botones -->
+    <div class="curve" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <!-- Relleno blanco que abre paso hacia la sección inferior -->
         <path class="curve-fill"
               d="M0,80 C240,140 480,20 720,80 S1200,140 1440,80 L1440,120 L0,120 Z"/>
-        <!-- Trazo dorado siguiendo la curva (animado) -->
+        <!-- Trazo dorado siguiendo la curva -->
         <path class="curve-stroke"
               d="M0,80 C240,140 480,20 720,80 S1200,140 1440,80"/>
       </svg>
     </div>
   </section>
 
-  <!-- Bloque de acciones (botones) con patrón blanco de fondo -->
+  <!-- ░░░ Acciones (botones) sobre patrón blanco ░░░ -->
   <section class="actions-bg">
     <main class="wrap actions">
 
@@ -115,6 +105,12 @@
         Página institucional
       </a>
     </main>
+
+    <!-- Corazón CDMX centrado debajo de los botones, sobre el patrón blanco -->
+    <!-- Archivo: corazon.png (con fondo transparente) -->
+    <img src="corazon.png"
+         alt="Corazón Ciudad de México"
+         class="hero-heart" />
   </section>
 </body>
 </html>
