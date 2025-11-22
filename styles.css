@@ -50,13 +50,13 @@ body{
 }
 .hero > .wrap{
   position:relative;
-  padding:18px 16px 8px;
+  padding:14px 16px 4px;
   animation: heroIn .7s ease .05s both;
 }
 .hero-grid{
   display:grid;
   grid-template-columns:1fr auto;
-  gap:16px;
+  gap:12px;
   align-items:center;
 }
 h1{
@@ -112,7 +112,7 @@ h1 .line{
 /* 4. Fondo de acciones en blanco limpio */
 .actions-bg{
   background:#fff;
-  padding:16px 0 18px;
+  padding:12px 0 10px;
 }
 
 /* 5. Botones */
@@ -162,7 +162,7 @@ h1 .line{
 /* 6. Corazón CDMX debajo de los botones */
 .hero-heart{
   display:block;
-  margin:6px auto 0;                    /* más pegado al botón */
+  margin:4px auto 0;                    /* más pegado al botón */
   width:clamp(110px, 15vw, 170px);      /* responsive: min 110, ideal 15vw, max 170 */
   height:auto;
   animation: heartbeat 1.6s ease-in-out infinite;
