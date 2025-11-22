@@ -109,17 +109,10 @@ h1 .line{
   animation: draw var(--curve-speed) ease-out .2s forwards;
 }
 
-/* 4. Fondo de acciones (patrón blanco) */
+/* 4. Fondo de acciones en blanco limpio */
 .actions-bg{
-  background:#fff url('patron_blanco.jpg') center/cover no-repeat;
-  padding:22px 0 32px;          /* menos aire debajo */
-}
-
-/* min-height solo en pantallas pequeñas para que se vea “lleno” */
-@media (max-width: 768px){
-  .actions-bg{
-    min-height:calc(100vh - 82px);
-  }
+  background:#fff;
+  padding:16px 0 18px;
 }
 
 /* 5. Botones */
@@ -135,6 +128,8 @@ h1 .line{
   align-items:center;
   justify-content:center;
   gap:12px;
+  width:min(320px, 92%);
+  align-self:center;
   text-decoration:none;
   font-weight:700;
   border-radius:12px;
