@@ -1,214 +1,255 @@
-:root{
-  --guinda:#9d2148;    /* Guinda institucional */
-  --dorado:#b28e5c;    /* Dorado institucional */
-  --blanco:#ffffff;
-  --gris:#111;
-  --curve-speed: 2.8s; /* Velocidad trazo dorado */
+:root {
+  --guinda: #9d2148;    /* Guinda institucional */
+  --dorado: #b28e5c;    /* Dorado institucional */
+  --blanco: #ffffff;
+  --gris: #111;
+  --curve-speed: 2.8s;  /* Velocidad trazo dorado */
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:'Roboto',sans-serif;
-  color:var(--gris);
-  background:#fff;
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: var(--gris);
+  background: #fff;
+  /* Mejora: evita rebote elástico no deseado en iOS */
+  overscroll-behavior-y: none;
 }
-.wrap{
-  max-width:720px;
-  margin:0 auto;
-  padding:0 16px;
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 /* 1. Banner superior blanco */
-.top-bar{
-  background:#fff;
-  height:82px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-bottom:3px solid var(--dorado);
+.top-bar {
+  background: #fff;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid var(--dorado);
   animation: bandFade .6s ease both;
 }
-.top-bar img{
-  height:72px;      /* logo más grande */
-  width:auto;
+
+.top-bar img {
+  height: 72px;
+  width: auto;
 }
 
 /* 2. Hero con patrón rojo */
-.hero{
-  color:#fff;
-  position:relative;
-  background:url('patron_rojo.jpg') center/cover no-repeat;
-  overflow:hidden;
+.hero {
+  color: #fff;
+  position: relative;
+  /* Mejora: Color de fondo por si la imagen tarda en cargar */
+  background-color: var(--guinda);
+  background-image: url('patron_rojo.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(157,33,72,0.74);
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(157, 33, 72, 0.74);
 }
-.hero > .wrap{
-  position:relative;
-  padding:18px 16px 8px;
+
+.hero > .wrap {
+  position: relative;
+  padding: 18px 16px 8px;
   animation: heroIn .7s ease .05s both;
 }
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:16px;
-  align-items:center;
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
 }
-h1{
-  font-family:'Cabin',sans-serif;
-  font-weight:700;
-  margin:0 0 6px;
-  line-height:1.06;
+
+h1 {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 700;
+  margin: 0 0 6px;
+  line-height: 1.06;
 }
-h1 .line{
-  display:block;
-  white-space:nowrap;
-  font-size:clamp(28px,6vw,50px);
+
+h1 .line {
+  display: block;
+  white-space: nowrap;
+  font-size: clamp(28px, 6vw, 50px);
 }
-.role{
-  color:var(--dorado);
-  font-weight:700;
-  margin:2px 0 6px;
-  font-size:clamp(16px,3.5vw,20px);
+
+.role {
+  color: var(--dorado);
+  font-weight: 700;
+  margin: 2px 0 6px;
+  font-size: clamp(16px, 3.5vw, 20px);
 }
-.org{
-  margin:0;
-  opacity:.98;
-  font-size:clamp(14px,2.7vw,18px);
+
+.org {
+  margin: 0;
+  opacity: .98;
+  font-size: clamp(14px, 2.7vw, 18px);
 }
 
 /* Foto de perfil */
-.avatar{
-  width:132px;
-  height:132px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid #fff;
-  outline:2px solid var(--dorado);
-  outline-offset:-3px;
-  box-shadow:0 3px 12px rgba(0,0,0,.25);
+.avatar {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  outline: 2px solid var(--dorado);
+  outline-offset: -3px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .25);
   animation: avatarPop .5s ease .2s both;
 }
 
 /* 3. Curva orgánica */
-.curve{position:relative;z-index:1}
-.curve svg{display:block;width:100%;height:auto}
-.curve-fill{fill:#fff}
-.curve-stroke{
-  fill:none;
-  stroke:var(--dorado);
-  stroke-width:13;              /* grosor de la línea dorada */
-  stroke-linecap:round;
-  stroke-dasharray:1000;
-  stroke-dashoffset:1000;
+.curve { position: relative; z-index: 1; }
+.curve svg { display: block; width: 100%; height: auto; }
+.curve-fill { fill: #fff; }
+
+.curve-stroke {
+  fill: none;
+  stroke: var(--dorado);
+  stroke-width: 13;
+  stroke-linecap: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
   animation: draw var(--curve-speed) ease-out .2s forwards;
 }
 
-/* 4. Fondo de acciones (PLANO, sin patrón) */
-.actions-bg{
-  background:#fff;              /* antes tenía imagen de patrón */
-  padding:16px 0 20px;          /* menos aire para que todo quepa */
+/* 4. Fondo de acciones */
+.actions-bg {
+  background: #fff;
+  padding: 16px 0 30px;
 }
 
 /* 5. Botones */
-.actions{
-  display:flex;
-  flex-direction:column;
-  gap:8px;                      /* antes 12px, más compacto */
-  max-width:420px;
-  margin:0 auto;
-}
-.btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  text-decoration:none;
-  font-weight:700;
-  border-radius:12px;
-  padding:7px 12px;             /* antes 10px 14px, reduce alto del botón */
-  border:2px solid var(--guinda);
-  border-bottom:3px solid var(--guinda);
-  background:#fff;
-  color:var(--guinda);
-  transition:background .2s, transform .05s, box-shadow .2s;
-  box-shadow:0 0 0 rgba(0,0,0,0);
-  animation: btnIn .5s ease both;
-  font-size:0.95rem;            /* un pelín más compacto */
-}
-.actions .btn:nth-child(1){animation-delay:.05s}
-.actions .btn:nth-child(2){animation-delay:.1s}
-.actions .btn:nth-child(3){animation-delay:.15s}
-.actions .btn:nth-child(4){animation-delay:.2s}
-.btn:hover{background:#f7f2f5}
-.btn:active{transform:translateY(1px)}
-.btn:focus-visible{
-  outline:3px solid rgba(157,33,72,.25);
-  outline-offset:2px;
-  box-shadow:0 0 0 3px rgba(157,33,72,.15);
-}
-.icon svg{
-  width:20px;
-  height:20px;
-  display:block;
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Aumentado ligeramente para evitar clics erróneos */
+  max-width: 420px;
+  margin: 0 auto;
 }
 
-/* 6. Corazón CDMX debajo de los botones */
-.hero-heart{
-  display:block;
-  margin:4px auto 0;                    /* un poco más cerca de los botones */
-  width:clamp(110px, 15vw, 170px);
-  height:auto;
+/* Estilo base de botón (Secundario/Outline) */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 12px;
+  /* Área táctil mejorada */
+  padding: 11px 16px;
+  border: 2px solid var(--guinda);
+  background: #fff;
+  color: var(--guinda);
+  transition: all .2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  animation: btnIn .5s ease both;
+  font-size: 1rem;
+}
+
+/* ESTILO DESTACADO (Primario/Sólido) */
+.btn-primary {
+  background: var(--guinda);
+  color: #fff;
+  border-color: var(--guinda);
+  box-shadow: 0 4px 12px rgba(157, 33, 72, 0.25);
+}
+
+.btn-primary:hover {
+  background: #851b3d;
+  border-color: #851b3d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(157, 33, 72, 0.35);
+}
+
+/* Hover genérico para botones secundarios */
+.btn:not(.btn-primary):hover {
+  background: #fdf5f8;
+  transform: translateY(-1px);
+}
+
+/* Efecto click (feedback) */
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Animación en cascada para botones */
+.actions .btn:nth-child(1) { animation-delay: .05s; }
+.actions .btn:nth-child(2) { animation-delay: .1s; }
+.actions .btn:nth-child(3) { animation-delay: .15s; }
+.actions .btn:nth-child(4) { animation-delay: .2s; }
+
+/* Iconos SVG */
+.icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  /* El color lo hereda del texto (guinda o blanco) */
+  fill: currentColor; 
+}
+
+/* 6. Corazón CDMX */
+.hero-heart {
+  display: block;
+  margin: 12px auto 0;
+  width: clamp(110px, 15vw, 170px);
+  height: auto;
   animation: heartbeat 1.6s ease-in-out infinite;
-  pointer-events:none;
+  pointer-events: none;
 }
 
 /* 7. Animaciones */
-@keyframes heroIn{
-  from{opacity:0; transform:translateY(8px)}
-  to{opacity:1; transform:none}
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
 }
-@keyframes avatarPop{
-  0%{opacity:0; transform:scale(.94)}
-  100%{opacity:1; transform:scale(1)}
+@keyframes avatarPop {
+  0% { opacity: 0; transform: scale(.94); }
+  100% { opacity: 1; transform: scale(1); }
 }
-@keyframes draw{
-  to{ stroke-dashoffset:0 }
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
 }
-@keyframes btnIn{
-  from{opacity:0; transform:translateY(6px)}
-  to{opacity:1; transform:none}
+@keyframes btnIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
 }
-@keyframes bandFade{
-  from{opacity:0} to{opacity:1}
+@keyframes bandFade {
+  from { opacity: 0; } to { opacity: 1; }
 }
-@keyframes heartbeat{
-  0%  {transform:scale(1)}
-  10% {transform:scale(1.12)}
-  20% {transform:scale(1)}
-  30% {transform:scale(1.12)}
-  40% {transform:scale(1)}
-  100%{transform:scale(1)}
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  10% { transform: scale(1.1); }
+  20% { transform: scale(1); }
+  30% { transform: scale(1.1); }
+  40% { transform: scale(1); }
+  100% { transform: scale(1); }
 }
 
-/* Reduce animaciones si el usuario lo pide */
-@media (prefers-reduced-motion:reduce){
-  .btn,
-  .hero > .wrap,
-  .avatar,
-  .curve-stroke,
-  .top-bar,
-  .hero-heart{
-    animation:none;
+/* Accesibilidad: Reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .btn, .hero > .wrap, .avatar, .curve-stroke, .top-bar, .hero-heart {
+    animation: none;
+    transition: none;
   }
 }
 
-/* Desktop: avatar más grande */
-@media(min-width:760px){
-  .avatar{width:168px;height:168px}
+/* Desktop */
+@media(min-width: 760px) {
+  .avatar { width: 168px; height: 168px; }
 }
