@@ -2,9 +2,9 @@
   --guinda: #9d2148;
   --dorado: #b28e5c;
   --blanco: #ffffff;
-  --bg-gris: #f4f4f4;
 }
 
+/* Quitamos el tap highlight gris de iPhone */
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 body {
@@ -12,10 +12,10 @@ body {
   font-family: 'Roboto', sans-serif;
   background: var(--blanco);
   color: #222;
-  overscroll-behavior-y: none;
+  overscroll-behavior-y: none; /* Evita rebote elástico */
 }
 
-/* Header Cristal */
+/* --- Header Sticky --- */
 .top-bar {
   position: sticky; top: 0; z-index: 99;
   height: 70px;
@@ -28,9 +28,11 @@ body {
 }
 .top-bar img { height: 50px; }
 
-/* Hero */
+/* --- Hero Section --- */
 .hero {
   background: var(--guinda);
+  background-image: url('patron_rojo.jpg'); /* Si existe */
+  background-size: cover;
   color: #fff;
   padding-top: 20px;
   position: relative;
@@ -42,119 +44,62 @@ body {
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 20px;
 }
-
-.textos h1 {
-  font-family: 'Cabin', sans-serif;
-  font-size: 1.8rem; line-height: 1.1; margin: 0 0 10px;
-}
-.badge {
-  display: inline-block;
-  background: var(--dorado);
-  padding: 4px 8px; border-radius: 4px;
-  font-weight: bold; font-size: 0.8rem; text-transform: uppercase;
-  margin-bottom: 5px;
-}
+.textos h1 { font-family: 'Cabin', sans-serif; font-size: 1.8rem; line-height: 1.1; margin: 0 0 10px; }
+.badge { display: inline-block; background: var(--dorado); padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; }
 .org { margin: 0; font-size: 0.9rem; opacity: 0.9; }
 
-.avatar {
-  width: 100px; height: 100px;
-  border-radius: 50%; border: 3px solid #fff;
-  object-fit: cover;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
+.avatar { width: 100px; height: 100px; border-radius: 50%; border: 3px solid #fff; object-fit: cover; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 .curve svg { display: block; width: 100%; height: auto; }
 
-/* Acciones */
+/* --- Botones --- */
 .actions-bg { padding: 10px 0 50px; }
 .actions { display: flex; flex-direction: column; gap: 15px; }
-
-/* Grid para botones dobles */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
-/* Estilos de Botón */
 .btn {
   display: flex; align-items: center; justify-content: center; gap: 10px;
   text-decoration: none;
   background: #fff; border: 2px solid var(--guinda);
-  color: var(--guinda);
-  padding: 14px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 0.95rem;
+  color: var(--guinda); padding: 14px; border-radius: 12px;
+  font-weight: 700; font-size: 0.95rem;
   transition: transform 0.05s, background 0.1s;
   cursor: pointer;
-  /* Reset */
   font-family: inherit; appearance: none;
 }
+/* Efecto Hundirse en iPhone */
+.btn:active { transform: scale(0.96); background: #f0f0f0; }
 
-/* Efecto Click iPhone (Hundirse) */
-.btn:active {
-  transform: scale(0.96);
-  background: #f0f0f0;
-}
-
-/* Botón Principal (Rojo) */
 .btn-primary {
   background: var(--guinda); color: #fff; border: none;
-  justify-content: flex-start; text-align: left;
-  padding: 16px;
+  justify-content: flex-start; text-align: left; padding: 16px;
   box-shadow: 0 5px 15px rgba(157, 33, 72, 0.3);
 }
 .btn-primary:active { background: #7a1836; }
-.icon-box {
-  background: rgba(255,255,255,0.2);
-  width: 40px; height: 40px; border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-}
+
+.icon-box { background: rgba(255,255,255,0.2); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
 .icon-box svg { width: 24px; color: #fff; }
 .btn-text { display: flex; flex-direction: column; }
 .btn-text .title { font-size: 1.1rem; }
 .btn-text .subtitle { font-size: 0.8rem; font-weight: 400; opacity: 0.9; }
-
-/* Iconos generales */
 .icon { width: 22px; height: 22px; }
 
-/* Botón Compartir (Arreglado) */
-.btn-outline {
-  border: 2px solid #ddd;
-  color: #555;
-  background: transparent;
-  width: 100%; /* Ocupa todo el ancho */
-  margin-top: 10px; /* Separado del resto */
-}
-.btn-outline svg path { fill: #555; } /* Icono gris */
-
-/* Corazón SVG */
+/* --- Corazón --- */
 .heart-container { text-align: center; margin-top: 30px; }
 .hero-heart {
-  width: 120px; height: 120px;
+  width: 130px;
+  height: auto;
   margin: 0 auto;
   cursor: pointer;
+  /* Animación latido continuo */
   animation: beat 3s infinite ease-in-out;
+  display: block;
 }
+/* Golpe fuerte al click */
 .hero-heart.thump { animation: thump 0.3s ease-out; }
-.tap-hint { color: #999; font-size: 0.8rem; text-transform: uppercase; margin-top: 5px; display: block;}
+/* Se hunde al tocarlo en iPhone */
+.hero-heart:active { transform: scale(0.9); transition: 0.05s; }
 
-/* Modal */
-.modal-overlay {
-  position: fixed; inset: 0; background: rgba(0,0,0,0.6);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 1000;
-  backdrop-filter: blur(4px);
-}
-.modal-overlay.show { opacity: 1; pointer-events: auto; }
-.modal-content {
-  background: #fff; padding: 25px; border-radius: 20px;
-  text-align: center; width: 85%; max-width: 300px;
-  position: relative;
-}
-.qr-img { width: 100%; border-radius: 10px; margin: 10px 0; }
-.close-btn {
-  position: absolute; top: 10px; right: 15px;
-  background: none; border: none; font-size: 24px; color: #999;
-}
-.btn-full { width: 100%; background: #eee; border: none; margin-top: 5px; color: #333;}
+.tap-hint { color: #999; font-size: 0.8rem; text-transform: uppercase; margin-top: 10px; display: block;}
 
 /* Animaciones */
 @keyframes beat { 0%,100%{transform:scale(1)} 10%{transform:scale(1.05)} 20%{transform:scale(1)} }
