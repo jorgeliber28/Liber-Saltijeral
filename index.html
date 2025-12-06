@@ -2,211 +2,145 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <!-- Evita zoom al tocar inputs o botones en iPhone -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-
-  <title>Jorge Liber Saltijeral - SEDEMA CDMX</title>
+  <title>Jorge Liber Saltijeral - SEDEMA</title>
   
-  <meta name="description" content="Tarjeta digital oficial. Asesor en la Secretaría del Medio Ambiente CDMX." />
-  
-  <!-- Open Graph (Cómo se ve al compartir en WhatsApp) -->
-  <meta property="og:title" content="Jorge Liber Saltijeral" />
-  <meta property="og:description" content="Asesor - Secretaría del Medio Ambiente CDMX" />
-  <meta property="og:image" content="foto.jpg" /> <!-- Tu foto debe llamarse foto.jpg -->
-  <meta property="og:type" content="profile" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="logo.png" type="image/png">
-  <meta name="theme-color" content="#ffffff">
-
-  <!-- Fuentes: Cabin para títulos fuertes, Roboto para lectura -->
+  <!-- Estilos -->
   <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <!-- 1. Header "Sticky" con efecto Cristal -->
+  <!-- Header Sticky -->
   <header class="top-bar">
     <img src="logo.png" alt="SEDEMA CDMX">
   </header>
 
-  <!-- 2. Hero Section -->
+  <!-- Hero -->
   <section class="hero">
     <div class="wrap">
-      <div class="hero-grid">
-        <div class="hero-titles">
-          <h1>
-            <span class="line">Jorge Liber</span>
-            <span class="line">Saltijeral Giles</span>
-          </h1>
+      <div class="hero-content">
+        <div class="textos">
+          <h1>Jorge Liber<br>Saltijeral Giles</h1>
           <div class="badge">Asesor</div>
-          <p class="org">Secretaría del Medio Ambiente de la Ciudad de México</p>
+          <p class="org">Secretaría del Medio Ambiente CDMX</p>
         </div>
-        
-        <figure class="avatar-wrap">
-          <img class="avatar" src="foto.jpg" alt="Jorge Liber">
-        </figure>
+        <img class="avatar" src="foto.jpg" alt="Foto Perfil">
       </div>
     </div>
-
-    <!-- Curva decorativa -->
-    <div class="curve" aria-hidden="true">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-        <path class="curve-fill" d="M0,60 C320,120 620,20 1440,60 L1440,100 L0,100 Z"/>
-        <path class="curve-stroke" d="M0,60 C320,120 620,20 1440,60"/>
-      </svg>
-    </div>
+    <!-- Curva -->
+    <div class="curve"><svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path fill="#fff" d="M0,60 C320,120 620,20 1440,60 L1440,100 L0,100 Z"/></svg></div>
   </section>
 
-  <!-- 3. Botones de Acción -->
+  <!-- Botones -->
   <section class="actions-bg">
     <main class="wrap actions">
 
-      <!-- PRIORIDAD 1: Guardar (Botón Sólido y Grande) -->
-      <a class="btn btn-primary btn-large" href="contact.vcf" download="Jorge_Liber_Saltijeral.vcf">
+      <!-- 1. GUARDAR CONTACTO (Gigante y Rojo) -->
+      <a class="btn btn-primary" href="contact.vcf" download="Jorge_Liber_Saltijeral.vcf">
         <div class="icon-box">
-          <svg viewBox="0 0 256 256"><path fill="currentColor" d="M216 40H40a16 16 0 0 0-16 16v144a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V56a16 16 0 0 0-16-16Zm0 160H40V56h176v144ZM88 168h48a24 24 0 0 0-48 0Zm24-32a24 24 0 1 0-24-24a24 24 0 0 0 24 24Zm64-40h32v16h-32Zm0 32h40v16h-40Z"/></svg>
+          <svg viewBox="0 0 256 256"><path fill="currentColor" d="M224 48H32a8 8 0 0 0-8 8v136a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V56a8 8 0 0 0-8-8Zm-24 16v112H56V64h144ZM88 168h48a24 24 0 0 0-48 0Zm24-32a24 24 0 1 0-24-24a24 24 0 0 0 24 24Zm64-40h32v16h-32Zm0 32h40v16h-40Z"/></svg>
         </div>
         <div class="btn-text">
-          <span class="btn-title">Guardar Contacto</span>
-          <span class="btn-subtitle">Añadir a la agenda</span>
+          <span class="title">Guardar Contacto</span>
+          <span class="subtitle">Añadir a la agenda</span>
         </div>
       </a>
 
-      <!-- PRIORIDAD 2: Comunicación Directa -->
+      <!-- 2. WhatsApp y Correo (En fila) -->
       <div class="grid-2">
-        <!-- WhatsApp -->
         <a class="btn" href="https://wa.me/525533312276" target="_blank">
-          <span class="icon"><svg viewBox="0 0 256 256"><path fill="currentColor" d="M128 24a88 88 0 0 0-76.3 129.9L40 216l62.7-11.9A88 88 0 1 0 128 24Zm0 160a72 72 0 0 1-36.7-9.9l-2.6-1.6l-37.3 7.1l7.1-37.3l-1.6-2.6A72 72 0 1 1 128 184Zm39.7-41.6c-2.2 6.2-12.5 11.8-17.5 12.1c-4.5.3-10.1.4-26.2-5.4c-22-8-36.1-31-37.2-32.4c-1-1.4-8.9-11.9-8.9-22.7s5.5-16.1 7.4-18.3c2.2-2.4 4.8-3 6.4-3s3.2.1 4.5.1c1.4 0 3.4-.8 5.3 4.1c2 5 6.9 17.1 7.5 18.3c.6 1.2 1 2.6.2 4c-.8 1.4-1.2 2.6-2.4 4c-1.2 1.4-2.6 3-3.7 4c-1.2 1-2.4 2.2-1 4.6c1.4 2.4 6.3 10.4 13.6 16.9c9.4 8.4 17.4 11 19.8 12.2c2.4 1.2 3.8 1 5.2-.2c1.4-1.2 6-7 7.6-9.4c1.6-2.4 3.2-2 5.3-1.2c2.2.8 13.9 6.6 16.3 7.8c2.4 1.2 4 1.8 4.6 2.8c.7 1 0 6.1-2.2 12.3Z"/></svg></span>
+          <svg class="icon" viewBox="0 0 256 256"><path fill="#9d2148" d="M128 24a88 88 0 0 0-76.3 129.9L40 216l62.7-11.9A88 88 0 1 0 128 24Zm0 160a72 72 0 0 1-36.7-9.9l-2.6-1.6l-37.3 7.1l7.1-37.3l-1.6-2.6A72 72 0 1 1 128 184Zm39.7-41.6c-2.2 6.2-12.5 11.8-17.5 12.1c-4.5.3-10.1.4-26.2-5.4c-22-8-36.1-31-37.2-32.4c-1-1.4-8.9-11.9-8.9-22.7s5.5-16.1 7.4-18.3c2.2-2.4 4.8-3 6.4-3s3.2.1 4.5.1c1.4 0 3.4-.8 5.3 4.1c2 5 6.9 17.1 7.5 18.3c.6 1.2 1 2.6.2 4c-.8 1.4-1.2 2.6-2.4 4c-1.2 1.4-2.6 3-3.7 4c-1.2 1-2.4 2.2-1 4.6c1.4 2.4 6.3 10.4 13.6 16.9c9.4 8.4 17.4 11 19.8 12.2c2.4 1.2 3.8 1 5.2-.2c1.4-1.2 6-7 7.6-9.4c1.6-2.4 3.2-2 5.3-1.2c2.2.8 13.9 6.6 16.3 7.8c2.4 1.2 4 1.8 4.6 2.8c.7 1 0 6.1-2.2 12.3Z"/></svg>
           WhatsApp
         </a>
-        <!-- Correo (NUEVO) -->
         <a class="btn" href="mailto:tucorreo@sedema.cdmx.gob.mx">
-          <span class="icon"><svg viewBox="0 0 256 256"><path fill="currentColor" d="M224 48H32a8 8 0 0 0-8 8v136a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V56a8 8 0 0 0-8-8ZM48 64h160v8.6l-80 57.1l-80-57.1Zm160 128H48V89.4l75.4 53.9a8 8 0 0 0 9.2 0L208 89.4Z"/></svg></span>
+          <svg class="icon" viewBox="0 0 256 256"><path fill="#9d2148" d="M224 48H32a8 8 0 0 0-8 8v136a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V56a8 8 0 0 0-8-8ZM48 64h160v8.6l-80 57.1l-80-57.1Zm160 128H48V89.4l75.4 53.9a8 8 0 0 0 9.2 0L208 89.4Z"/></svg>
           Correo
         </a>
       </div>
 
-      <!-- PRIORIDAD 3: Redes y Web -->
+      <!-- 3. Redes y Web -->
       <a class="btn" href="https://www.linkedin.com/in/jorge-liber-saltijeral-giles-628a7740/" target="_blank">
-        <span class="icon"><svg viewBox="0 0 256 256"><path fill="currentColor" d="M216 24H40a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V40a16 16 0 0 0-16-16ZM96 192H64V112h32v80Zm-16-96a16 16 0 1 1 16-16a16 16 0 0 1-16 16Zm112 96h-32v-44c0-10.5-4.2-16.2-12.9-16.2c-6.3 0-9.9 3.6-11.6 7.1c-.6 1.4-.8 3.4-.8 5.4V192h-32v-80h32v12c4.6-7.2 13.1-14.2 27.7-14.2c19.7 0 32.6 12.9 32.6 39.7V192Z"/></svg></span>
-        Conectar en LinkedIn
+        <svg class="icon" viewBox="0 0 256 256"><path fill="#9d2148" d="M216 24H40a16 16 0 0 0-16 16v176a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V40a16 16 0 0 0-16-16ZM96 192H64V112h32v80Zm-16-96a16 16 0 1 1 16-16a16 16 0 0 1-16 16Zm112 96h-32v-44c0-10.5-4.2-16.2-12.9-16.2c-6.3 0-9.9 3.6-11.6 7.1c-.6 1.4-.8 3.4-.8 5.4V192h-32v-80h32v12c4.6-7.2 13.1-14.2 27.7-14.2c19.7 0 32.6 12.9 32.6 39.7V192Z"/></svg>
+        LinkedIn
       </a>
 
       <a class="btn" href="https://sedema.cdmx.gob.mx/" target="_blank">
-        <span class="icon"><svg viewBox="0 0 256 256"><path fill="currentColor" d="M152 32h72v72h-24V78.6L121.9 156l-22.6-22.6L177.4 56H152V32ZM40 64h80v16H56v96h96v-40h16v56H40V64Z"/></svg></span>
+        <svg class="icon" viewBox="0 0 256 256"><path fill="#9d2148" d="M152 32h72v72h-24V78.6L121.9 156l-22.6-22.6L177.4 56H152V32ZM40 64h80v16H56v96h96v-40h16v56H40V64Z"/></svg>
         Sitio Web Oficial
       </a>
 
-      <!-- Botón Compartir / QR -->
-      <button class="btn btn-ghost" id="open-qr">
-        <span class="icon small"><svg viewBox="0 0 256 256"><path fill="currentColor" d="M56 32H40a8 8 0 0 0-8 8v16a8 8 0 0 0 16 0V48h8a8 8 0 0 0 0-16Zm168 0h-16a8 8 0 0 0 0 16h8v8a8 8 0 0 0 16 0V40a8 8 0 0 0-8-8ZM56 208H48v-8a8 8 0 0 0-16 0v16a8 8 0 0 0 8 8h16a8 8 0 0 0 0-16Zm160-8a8 8 0 0 0-8 8v8h-8a8 8 0 0 0 0 16h16a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8ZM88 88V64a8 8 0 0 0-8-8H56a8 8 0 0 0-8 8v24a8 8 0 0 0 8 8h24a8 8 0 0 0 8-8Zm-16-8H64V72h8Zm0 112v-24a8 8 0 0 0-8-8H56a8 8 0 0 0-8 8v24a8 8 0 0 0 8 8h24a8 8 0 0 0 8-8Zm-16-8H64v-8h8Zm112-96V64a8 8 0 0 0-8-8h-24a8 8 0 0 0-8 8v24a8 8 0 0 0 8 8h24a8 8 0 0 0 8-8Zm-16-8h-8V72h8Zm-24 64a8 8 0 0 0-8 8v32a8 8 0 0 0 16 0v-8h16a8 8 0 0 0 0-16Zm16 16v8h-8v-8Zm24-24h-16a8 8 0 0 0 0 16h8v8a8 8 0 0 0 16 0v-16a8 8 0 0 0-8-8Zm-40-16a8 8 0 0 0-8 8v16a8 8 0 0 0 16 0v-16a8 8 0 0 0-8-8Zm88-72H128v40h80ZM128 224h80v-40h-80Z"/></svg></span>
-        Mostrar Código QR
+      <!-- 4. BOTÓN COMPARTIR (Arreglado: Ancho completo y estilo limpio) -->
+      <button class="btn btn-outline" id="open-qr">
+        <svg class="icon" viewBox="0 0 256 256"><path fill="#9d2148" d="M184 192a32 32 0 0 0-25.3 12.6l-72.2-44.5a32.5 32.5 0 0 0 0-64.2l72.2-44.5a32 32 0 1 0-8-15.6a31.8 31.8 0 0 0 1.2 8.6L79.7 89.4a32 32 0 1 0 0 77.2l72.2 44.5a31.8 31.8 0 0 0-1.2 8.6a32 32 0 1 0 33.3-27.7Z"/></svg>
+        Compartir Tarjeta / QR
       </button>
 
     </main>
 
-    <!-- Corazón Interactivo -->
+    <!-- Corazón (SVG Insertado para que NO falle) -->
     <div class="heart-container">
-      <img src="corazon.png" alt="Corazón CDMX" class="hero-heart" id="heart-interactive" />
+      <div class="hero-heart" id="heart-interactive">
+        <!-- Este es el dibujo del corazón en código, nunca se rompe -->
+        <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#9d2148" d="M225.5 53.6c-20-21-52.6-21.6-73.4-1.6l-24.1 23.1l-24.1-23.1c-20.8-20-53.4-19.4-73.4 1.6c-20.6 21.6-20.2 55.4 1.1 76.6L128 224l96.4-93.8c21.3-21.2 21.7-55 1.1-76.6Z"/>
+          <!-- Brillo del corazón -->
+          <path fill="#d94f76" d="M225.5 53.6c-20-21-52.6-21.6-73.4-1.6l-24.1 23.1l-24.1-23.1c-10-9.6-23.2-14.5-36.4-14.3c41 4 67.5 32 80.5 56c5-25 25-50 77.8-40.1Z" opacity="0.3"/>
+        </svg>
+      </div>
       <span class="tap-hint">Toca para latir</span>
     </div>
   </section>
 
-  <!-- MODAL QR (Invisible hasta que se clickea) -->
+  <!-- Modal QR -->
   <div id="qr-modal" class="modal-overlay">
     <div class="modal-content">
       <button class="close-btn" id="close-qr">&times;</button>
       <h3>Escanéame</h3>
-      <p>Apunta con tu cámara aquí</p>
-      <!-- Genera tu QR en 'qr.io' u otro y guarda la imagen como qr.png -->
-      <img src="qr.png" alt="QR" class="qr-img">
-      <div class="modal-actions">
-         <button class="btn btn-share" id="share-native">O compartir enlace</button>
-      </div>
+      <p>Apunta con tu cámara</p>
+      <!-- IMPORTANTE: Sube tu imagen 'qr.png' a GitHub -->
+      <img src="qr.png" alt="QR" class="qr-img"> 
+      <button class="btn btn-full" id="share-native">Enviar enlace</button>
     </div>
   </div>
 
-  <!-- AUDIO REAL DE LATIDO -->
-  <!-- Este audio es un latido de corazón real, corto y profundo -->
+  <!-- Audio -->
   <audio id="heart-audio" src="https://assets.mixkit.co/active_storage/sfx/212/212-preview.mp3" preload="auto"></audio>
 
-  <!-- JAVASCRIPT -->
   <script>
+    /* LÓGICA COMPLETA */
     document.addEventListener("DOMContentLoaded", () => {
       
-      // Función de Vibración (funciona en Android)
-      const vibrar = (ms = 15) => {
-        if (navigator.vibrate) navigator.vibrate(ms);
-      };
-
-      // 1. SONIDO Y LATIDO DEL CORAZÓN
-      const heartImg = document.getElementById('heart-interactive');
-      const heartAudio = document.getElementById('heart-audio');
-
-      if(heartImg && heartAudio) {
-        heartImg.addEventListener('click', () => {
-          vibrar([50, 30, 50]); // Vibración doble tipo latido
-          
-          // Configuración del audio
-          heartAudio.currentTime = 0;
-          heartAudio.volume = 0.8; 
-          
-          // Promesa de reproducción (para evitar errores de navegador)
-          const playPromise = heartAudio.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(error => console.log("Interacción necesaria"));
-          }
-
-          // Reiniciar animación visual
-          heartImg.classList.remove('thump');
-          void heartImg.offsetWidth; // Truco para reiniciar CSS
-          heartImg.classList.add('thump');
-        });
-      }
-
-      // 2. MODAL QR Y COMPARTIR
-      const openQrBtn = document.getElementById('open-qr');
+      const audio = document.getElementById('heart-audio');
+      const heart = document.getElementById('heart-interactive');
       const modal = document.getElementById('qr-modal');
-      const closeQrBtn = document.getElementById('close-qr');
-      const shareNativeBtn = document.getElementById('share-native');
-
-      // Abrir QR
-      openQrBtn?.addEventListener('click', () => {
-        vibrar();
-        modal.classList.add('show');
+      
+      // 1. Corazón
+      heart.addEventListener('click', () => {
+        // Reiniciar audio
+        audio.currentTime = 0;
+        audio.play().catch(e => console.log("Click necesario"));
+        
+        // Animación golpe
+        heart.classList.remove('thump');
+        void heart.offsetWidth; 
+        heart.classList.add('thump');
       });
 
-      // Cerrar QR
-      const cerrarModal = () => modal.classList.remove('show');
-      closeQrBtn?.addEventListener('click', cerrarModal);
-      modal?.addEventListener('click', (e) => {
-        if (e.target === modal) cerrarModal();
-      });
+      // 2. Modal QR
+      document.getElementById('open-qr').addEventListener('click', () => modal.classList.add('show'));
+      document.getElementById('close-qr').addEventListener('click', () => modal.classList.remove('show'));
+      modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('show'); });
 
-      // Botón Compartir Nativo (dentro del modal)
-      shareNativeBtn?.addEventListener('click', async () => {
-        vibrar();
-        if (navigator.share) {
-          try {
-            await navigator.share({
-              title: 'Jorge Liber - SEDEMA',
-              text: 'Tarjeta de contacto oficial.',
-              url: window.location.href
-            });
-          } catch (err) {}
+      // 3. Compartir Nativo
+      document.getElementById('share-native').addEventListener('click', async () => {
+        if(navigator.share) {
+          try { await navigator.share({ title:'Jorge Liber', url: window.location.href }); } catch(e){}
         } else {
-          // Copiar al portapapeles si no hay compartir nativo
-          navigator.clipboard.writeText(window.location.href);
           alert('Enlace copiado');
+          navigator.clipboard.writeText(window.location.href);
         }
-      });
-
-      // Vibración en todos los botones
-      document.querySelectorAll('.btn').forEach(b => {
-        b.addEventListener('click', () => vibrar(10));
       });
     });
   </script>
